@@ -8,6 +8,13 @@
     --a-light-color: #efefef;
     --a-dark-color: #494949;
 }
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin: 0;
+}
+
 /* Colors */
 .a-primary {
     background: var(--a-primary-color);
