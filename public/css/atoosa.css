@@ -1,0 +1,11 @@
+:root {
+    --a-spacing: 12px;
+    --a-spacing--large: calc(var(--a-spacing) * 2);
+    --a-radius: 2px;
+    --a-primary-color: #65816B;
+    --a-white-color: #fff;
+    --a-black-color: #000;
+    --a-light-color: #efefef;
+    --a-dark-color: #494949;
+}
+}
