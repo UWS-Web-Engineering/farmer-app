@@ -97,4 +97,11 @@ body {
     border-radius: 0;
     padding: calc(var(--a-spacing)/2) calc(var(--a-spacing--large)/2);
 }
+/* Link */
+.a-link {
+    color: var(--a-black-color);
+    text-decoration: none;
+}
+.a-link:hover {
+    text-decoration: underline;
 }
