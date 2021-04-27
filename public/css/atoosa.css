@@ -8,4 +8,11 @@
     --a-light-color: #efefef;
     --a-dark-color: #494949;
 }
+/* Colors */
+.a-primary {
+    background: var(--a-primary-color);
+}
+.a-primary--text {
+    color: var(--a-primary-color);
+}
 }
