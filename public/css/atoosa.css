@@ -73,4 +73,10 @@ body {
 .a-ml-auto {
     margin-left: auto;
 }
+/* Container */
+.a-container {
+    padding: calc(var(--a-spacing--large)*2);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
 }
