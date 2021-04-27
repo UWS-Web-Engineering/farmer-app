@@ -20,3 +20,4 @@ Route::get('/user', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+Route::view('/register', 'users/register');
