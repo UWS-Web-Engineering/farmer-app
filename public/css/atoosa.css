@@ -88,4 +88,13 @@ body {
     text-transform: uppercase;
     text-decoration: none;
 }
+/* Text Field */
+.a-text-field {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid var(--a-dark-color);
+    border-left: none;
+    border-radius: 0;
+    padding: calc(var(--a-spacing)/2) calc(var(--a-spacing--large)/2);
+}
 }
