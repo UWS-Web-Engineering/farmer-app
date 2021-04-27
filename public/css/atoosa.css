@@ -32,4 +32,23 @@ body {
 .a-text-center {
     text-align: center;
 }
+/* Flex */
+.a-flex {
+    display: flex;
+}
+.a-flex-row {
+    flex-direction: row;
+}
+.a-flex-column {
+    flex-direction: column;
+}
+.a-align-self-center {
+    align-self: center;
+}
+.a-align-self-end {
+    align-self: end;
+}
+.a-justify-content-center {
+    justify-content: center;
+}
 }
