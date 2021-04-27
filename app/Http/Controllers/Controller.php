@@ -12,4 +12,5 @@ class Controller extends BaseController
     //pia commit //another commit
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     //test
+    //whatever commit
 }
