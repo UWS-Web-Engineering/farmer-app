@@ -1,3 +1,52 @@
 html {
-    /* background: red; */
+    /* font-family: mon; */
+}
+
+a {
+    color: black;
+}
+
+nav {
+    width: 93%;
+    margin: 20px auto;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.b-heading {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.b-body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.b-logo svg {
+    height: 30px;
+    fill: #65816B;
+}
+
+.b-logo .b-logo-name,
+.b-title {
+    font-size: .8em;
+    line-height: 2.5em;
+    /* background-color: yellow; */
+    width: 75%;
+    float: right;
+}
+
+.b-row {
+    width: 100%;
+}
+
+.b-col-6 {
+    width: 50%;
+    /* background-color: red; */
+    float: left;
+}
+
+.b-right {
+    text-align: right;
 }
