@@ -6,9 +6,14 @@ a {
     color: black;
 }
 
-nav {
+.b-topnav {
     width: 93%;
     margin: 20px auto;
+}
+
+main {
+    width: 93%;
+    margin: 0 auto;
 }
 
 .clearfix {
@@ -43,8 +48,34 @@ nav {
 
 .b-col-6 {
     width: 50%;
-    /* background-color: red; */
     float: left;
+}
+
+.b-col-3 {
+    width: 25%;
+    float: left;
+}
+
+.b-bottomnav {
+    font-family: 'Roboto', sans-serif;
+    font-size: .7em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    margin-bottom: 15px;
+}
+
+.b-bottomnav svg {
+    height: 30px;
+}
+
+.b-bottomnav .b-helper {
+    padding-top: 5px;
+}
+
+.b-center {
+    text-align: center;
 }
 
 .b-right {
