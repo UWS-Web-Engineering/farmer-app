@@ -13,6 +13,8 @@
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 	
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="/css/atoosa.css">

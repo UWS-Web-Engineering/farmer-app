@@ -20,4 +20,7 @@ Route::get('/user', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::view('/crops', 'crops/list');
+
 Route::view('/register', 'users/register');
