@@ -31,10 +31,14 @@ Route::get('/clients', function () {
 });
 
 Route::get('/query', function () {
+<<<<<<< HEAD
     return view('query', ['title' => 'Query']);
 });
 
 Route::get('/welcome', function () {
     return view('welcome');
+=======
+    return view('query');
+>>>>>>> Sample welcome layout
 });
 
