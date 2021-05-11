@@ -23,7 +23,12 @@ Route::get('/requests', function () {
     return view('requests', ['title' => 'New Requests']);
 });
 
+
 Route::get('/queries', [QueryController::class,'getQueries']);
+
+Route::get('/queries', function () {
+    return view('queries', ['title' => 'Queries']);
+});
 
 Route::get('/clients', function () {
     return view('clients', ['title' => 'Woolworths']);
