@@ -39,3 +39,6 @@ Route::get('/clients', function () {
 // });
 
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
+
+
+
