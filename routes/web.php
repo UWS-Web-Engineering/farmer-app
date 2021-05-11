@@ -22,6 +22,7 @@ Route::get('/requests', function () {
     return view('requests', ['title' => 'New Requests']);
 });
 
+<<<<<<< HEAD
 Route::get('/queries', function () {
     return view('queries', ['title' => 'Queries']);
 });
@@ -39,6 +40,10 @@ Route::get('/welcome', function () {
     return view('welcome');
 =======
     return view('query');
+>>>>>>> Sample welcome layout
+=======
+Route::get('/welcome', function () {
+    return view('welcome');
 >>>>>>> Sample welcome layout
 });
 
