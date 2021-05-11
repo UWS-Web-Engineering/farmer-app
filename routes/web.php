@@ -20,3 +20,8 @@ Route::get('/user', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
