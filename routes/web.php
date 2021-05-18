@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Response;
+use App\Http\Controllers\QueryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,14 @@ Route::get('/requests', function () {
     return view('requests', ['title' => 'New Requests']);
 });
 
-Route::get('/queries', function () {
-    return view('queries', ['title' => 'Queries']);
-});
+// Route::get('/queries', function () {
+//     return view('queries', ['title' => 'Queries']);
+// });
+// Route::get('/queries', function () {
+//     return view('queries', ['title' => 'Queries']);
+// });
+
+Route::get('/queries', [QueryController::class,'testHttpClient']);
 
 Route::get('/clients', function () {
     return view('clients', ['title' => 'Woolworths']);
@@ -32,4 +38,4 @@ Route::get('/clients', function () {
 
 Route::get('/query', function () {
     return view('query', ['title' => 'Query']);
-}); 
+});
