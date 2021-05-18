@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
+use App\Http\Controllers\QueryController;
 
 /*
 |--------------------------------------------------------------------------
