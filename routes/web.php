@@ -28,3 +28,7 @@ Route::get('/queries', function () {
 Route::get('/clients', function () {
     return view('clients');
 });
+
+Route::get('/query', function () {
+    return view('query');
+});
