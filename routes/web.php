@@ -32,3 +32,12 @@ Route::get('/clients', function () {
 // });
 
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
+
+Route::get('/client', function () {
+    return view('client', ['title' => 'Woolworths']);
+});
+
+Route::get('/crops', function () {
+    return view('crops');
+});
+
