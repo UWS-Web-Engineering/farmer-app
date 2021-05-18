@@ -108,6 +108,11 @@ main {
     width: 100%;
 }
 
+.b-bottomnav-spacer {
+    height: 100px;
+    width: 100%;
+}
+
 .b-queries-container,
 .b-clients-container {
     /* padding-top: 10px; */
@@ -174,3 +179,102 @@ main {
 .b-client-details-container {
     padding-bottom: 130px;
 }
+
+.b-msg-left {
+    width: 50%;
+    /* background-color: blue; */
+    /* background-color: red; */
+    /* padding: 20px; */
+    /* margin-top: 20px; */
+    /* margin-bottom: 5px; */
+}
+
+.b-msg-right {
+    /* width: auto; */
+    /* float: right; */
+    /* max-width: 50%; */
+    text-align: right;
+    /* height: auto; */
+    margin-left: 50%;
+}
+
+.b-msg-left .b-bubble {
+    width: 100%;
+    background-color: #F0F0F0;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.b-msg-right .b-bubble {
+    width: auto;
+    background-color: #DEDECB;
+    padding: 20px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.b-bubble .b-message {
+    margin-bottom: 10px;
+}
+
+.b-btn {
+    text-transform: uppercase;
+    background-color: red;
+    padding: 10px;
+    margin-top: 8px;
+    /* margin-bottom: 7px; */
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    font-size: .9em;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.b-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .8em;
+}
+
+.b-btn-y {
+    background-color: #65816B;
+}
+
+.b-btn-n {
+    background-color: #924949;
+}
+
+.b-btn-a {
+    background-color: #4B6C9D;
+}
+
+.b-msg-textbox {
+    
+    height: 150px;
+}
+
+.b-msg-textbox textarea {
+    width: calc(100% - 40px);
+    height: 3em;
+    background-color: #F6F6F6;
+    border: transparent;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.b-msg-textbox .b-btn {
+    width: 70px;
+    float: right;
+}
+    
