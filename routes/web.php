@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes // add your routes here
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -13,6 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/user', function () {
+    return view('user');
 });
+
+Route::get('/requests', function () {
+    return view('requests', ['title' => 'New Requests']);
+});
+
+Route::get('/queries', function () {
+    return view('queries', ['title' => 'Queries']);
+});
+
+Route::get('/clients', function () {
+    return view('clients', ['title' => 'Woolworths']);
+});
+
+Route::get('/query', function () {
+    return view('query', ['title' => 'Query']);
+}); 
