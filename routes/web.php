@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,4 @@ Route::get('/clients', function () {
 
 Route::get('/query', function () {
     return view('query', ['title' => 'Query']);
-});
+}); 
