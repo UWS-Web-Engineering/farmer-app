@@ -87,6 +87,10 @@ main {
     background-color: white;
 }
 
+.b-bottomnav a {
+    text-decoration: none;
+}
+
 .b-bottomnav svg {
     height: 30px;
 }
@@ -277,4 +281,4 @@ main {
     width: 70px;
     float: right;
 }
-    
+
