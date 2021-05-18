@@ -33,6 +33,7 @@ main {
 
 .b-heading {
     font-family: 'Montserrat', sans-serif;
+    font-size: .8em;
 }
 
 .b-body {
@@ -48,6 +49,7 @@ main {
 .b-title {
     width: 75%;
     float: right;
+    text-transform: uppercase;
     line-height: 2.5em;
 }
 
@@ -85,6 +87,10 @@ main {
     padding-top: 15px;
     padding-bottom: 15px;
     background-color: white;
+}
+
+.b-bottomnav a {
+    text-decoration: none;
 }
 
 .b-bottomnav svg {
@@ -277,4 +283,4 @@ main {
     width: 70px;
     float: right;
 }
-    
+
