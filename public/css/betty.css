@@ -11,7 +11,7 @@ a {
 }
 
 .b-topnav {
-    width: 93%;
+    width: 90%;
     margin: 20px auto;
 }
 
@@ -57,7 +57,7 @@ main {
 }
 
 .b-body-text {
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: .5em;
 }
 
@@ -103,13 +103,16 @@ main {
     text-align: right;
 }
 
-.b-queries-container {
-    padding-top: 10px;
+.b-nav-spacer {
+    height: 80px;
+    width: 100%;
+}
+
+.b-queries-container,
+.b-clients-container {
+    /* padding-top: 10px; */
     width: 93%;
     margin: 0 auto;
-    /* margin: 20px; */
-    padding-top: 80px;
-    /* padding-bottom: 70px; */
 }
 
 .b-queries-container .b-section:first-child {
@@ -120,4 +123,54 @@ main {
     /* background-color: red;; */
     padding: 5px 0;
     border-bottom: 1px solid #A7A7A7;
+}
+
+.b-read {
+    font-weight: 300;
+}
+
+.b-back svg {
+    height: 11px;
+}
+
+.b-back .b-heading-text {
+    /* line-height: 3em; */
+    margin-left: 10px;
+    font-size: .9em;
+}
+
+.b-cropname {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 3.5em;
+}
+
+.b-label {
+    text-transform: uppercase;
+    font-size: .8em;
+    padding-bottom: 3px;
+}
+
+.b-detail {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding-bottom: 15px;
+}
+
+.b-left-col {
+    width: 50%;
+    /* background-color: red; */
+    float: left;
+}
+
+.b-right-col {
+    width: 50%;
+    /* background-color: yellow; */
+    float: right;
+}
+
+.b-client-details-container {
+    padding-bottom: 130px;
 }

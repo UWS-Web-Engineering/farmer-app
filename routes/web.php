@@ -24,3 +24,7 @@ Route::get('/dashboard', function () {
 Route::get('/queries', function () {
     return view('queries');
 });
+
+Route::get('/clients', function () {
+    return view('clients');
+});
