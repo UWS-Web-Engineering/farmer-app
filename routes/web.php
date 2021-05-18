@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Response;
-use App\Http\Controllers\QueryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +32,12 @@ Route::get('/clients', function () {
 // });
 
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
+
+Route::get('/client', function () {
+    return view('client', ['title' => 'Woolworths']);
+});
+
+Route::get('/crops', function () {
+    return view('crops');
+});
+
