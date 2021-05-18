@@ -17,18 +17,18 @@ Route::get('/user', function () {
     return view('user');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/requests', function () {
+    return view('requests', ['title' => 'New Requests']);
 });
 
 Route::get('/queries', function () {
-    return view('queries');
+    return view('queries', ['title' => 'Queries']);
 });
 
 Route::get('/clients', function () {
-    return view('clients');
+    return view('clients', ['title' => 'Woolworths']);
 });
 
 Route::get('/query', function () {
-    return view('query');
+    return view('query', ['title' => 'Query']);
 });
