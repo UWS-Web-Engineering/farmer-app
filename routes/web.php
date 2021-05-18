@@ -23,19 +23,14 @@ Route::get('/requests', function () {
     return view('requests', ['title' => 'New Requests']);
 });
 
-// Route::get('/queries', function () {
-//     return view('queries', ['title' => 'Queries']);
-// });
-// Route::get('/queries', function () {
-//     return view('queries', ['title' => 'Queries']);
-// });
-
-Route::get('/queries', [QueryController::class,'testHttpClient']);
+Route::get('/queries', [QueryController::class,'getQueries']);
 
 Route::get('/clients', function () {
     return view('clients', ['title' => 'Woolworths']);
 });
 
-Route::get('/query', function () {
-    return view('query', ['title' => 'Query']);
-});
+// Route::get('/query', function () {
+//     return view('query', ['title' => 'Query']);
+// });
+
+Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
