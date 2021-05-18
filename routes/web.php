@@ -32,8 +32,3 @@ Route::get('/clients', function () {
 Route::get('/query', function () {
     return view('query', ['title' => 'Query']);
 });
-
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
