@@ -23,7 +23,6 @@ Route::get('/requests', function () {
     return view('requests', ['title' => 'New Requests']);
 });
 
-
 Route::view('/crops', 'crops/list');
 
 Route::view('/register', 'users/register');
@@ -31,7 +30,7 @@ Route::view('/register', 'users/register');
 Route::view('/login', 'users/login');
 
 Route::view('/details', 'users/details');
-=======
+
 Route::get('/queries', [QueryController::class,'getQueries']);
 
 Route::get('/clients', function () {
