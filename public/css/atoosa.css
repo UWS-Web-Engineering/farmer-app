@@ -1,0 +1,108 @@
+:root {
+    --a-spacing: 12px;
+    --a-spacing--large: calc(var(--a-spacing) * 2);
+    --a-radius: 2px;
+    --a-primary-color: #65816B;
+    --a-white-color: #fff;
+    --a-black-color: #000;
+    --a-light-color: #efefef;
+    --a-dark-color: #494949;
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin: 0;
+}
+
+/* Colors */
+.a-primary {
+    background: var(--a-primary-color);
+}
+.a-primary--text {
+    color: var(--a-primary-color);
+}
+/* Text */
+.a-text-bold {
+    font-weight: 700;
+}
+.a-text-light {
+    font-weight: 100;
+}
+.a-text-center {
+    text-align: center;
+}
+/* Flex */
+.a-flex {
+    display: flex;
+}
+.a-flex-row {
+    flex-direction: row;
+}
+.a-flex-column {
+    flex-direction: column;
+}
+.a-align-self-center {
+    align-self: center;
+}
+.a-align-self-end {
+    align-self: end;
+}
+.a-justify-content-center {
+    justify-content: center;
+}
+/* Spacing */
+.a-mt {
+    margin-top: var(--a-spacing);
+}
+.a-mt--lg {
+    margin-top: var(--a-spacing--large);
+}
+.a-mt--xl {
+    margin-top: calc(var(--a-spacing--large)*2);
+}
+.a-mb {
+    margin-bottom: var(--a-spacing);
+}
+.a-mb--lg {
+    margin-bottom: var(--a-spacing--large);
+}
+.a-mb--xl {
+    margin-bottom: calc(var(--a-spacing--large)*2);
+}
+.a-ml-auto {
+    margin-left: auto;
+}
+/* Container */
+.a-container {
+    padding: calc(var(--a-spacing--large)*2);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+/* Button */
+.a-btn {
+    background: var(--a-primary-color);
+    color: var(--a-white-color);
+    border-radius: var(--a-radius);
+    padding: var(--a-spacing) var(--a-spacing--large);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+/* Text Field */
+.a-text-field {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid var(--a-dark-color);
+    border-left: none;
+    border-radius: 0;
+    padding: calc(var(--a-spacing)/2) calc(var(--a-spacing--large)/2);
+}
+/* Link */
+.a-link {
+    color: var(--a-black-color);
+    text-decoration: none;
+}
+.a-link:hover {
+    text-decoration: underline;
+}
+
