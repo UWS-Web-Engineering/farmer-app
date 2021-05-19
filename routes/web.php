@@ -24,3 +24,7 @@ Route::get('/dashboard', function () {
 Route::view('/crops', 'crops/list');
 
 Route::view('/register', 'users/register');
+
+Route::view('/login', 'users/login');
+
+Route::view('/details', 'users/details');

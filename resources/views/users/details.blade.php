@@ -14,10 +14,22 @@
 	/> 
 </svg>
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
-		<input type="text" placeholder="Mobile Number" class="a-text-field a-mb" />
-		<input type="text" placeholder="Password" class="a-text-field a-mb" />
-		<input type="text" placeholder="Confirm Password" class="a-text-field a-mb" />
-		<a href="/details" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end">Register</a>
-		<a href="/login" class="a-link a-text-light a-align-self-center a-mt--xl">Already have an account? <span class="a-primary--text a-text-bold">Log in</span></a>
+	
+
+        <form action="/action_page.php">
+        <input type="text" placeholder="First Name" class="a-text-field a-mb" />
+		<input type="text" placeholder="Last Name" class="a-text-field a-mb" />
+<br>
+  <label class="a-text-light a-text-field a-mb" for="villages">Village:</label>
+  <select name="villages" id="villages">
+    <option value="Sydney">Sydney</option>
+    <option value="Wollongong">Wollongong</option>
+    <option value="c">c</option>
+    <option value="d">d</option>
+  </select>
+  <br><br>
+  <input class="a-btn a-mt a-mb--xl a-align-self-end" type="submit" value="Submit">
+</form>
+
 	</div>
 @endsection
