@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
+use App\Http\Controllers\QueryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,10 @@ Route::get('/user', function () {
     return view('user');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/requests', function () {
+    return view('requests', ['title' => 'New Requests']);
 });
+
 
 Route::view('/crops', 'crops/list');
 
@@ -28,3 +31,25 @@ Route::view('/register', 'users/register');
 Route::view('/login', 'users/login');
 
 Route::view('/details', 'users/details');
+=======
+Route::get('/queries', [QueryController::class,'getQueries']);
+
+Route::get('/clients', function () {
+    return view('clients', ['title' => 'Woolworths']);
+});
+
+// Route::get('/query', function () {
+//     return view('query', ['title' => 'Query']);
+// });
+
+Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
+
+Route::get('/client', function () {
+    return view('client', ['title' => 'Woolworths']);
+});
+
+Route::get('/crops', function () {
+    return view('crops');
+});
+
+
