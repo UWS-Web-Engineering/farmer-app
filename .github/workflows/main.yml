@@ -30,4 +30,12 @@ jobs:
           tags: iconic21/farmerapp:latest
       -
         name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+        run: echo ${{ steps.docker_build.outputs.digest }}  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: curl -X POST https://api.digitalocean.com/v2/apps/${{ secrets.CURL_APP_ID }}/deployments -H ${{ secrets.CURL_HEADER }} -d ${{ secrets.CURL_BODY }}
+    
