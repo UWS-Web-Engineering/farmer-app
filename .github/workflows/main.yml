@@ -37,5 +37,5 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: curl -X POST https://api.digitalocean.com/v2/apps/${{ secrets.CURL_APP_ID }}/deployments -H ${{ secrets.CURL_HEADER }} -d ${{ secrets.CURL_BODY }}
+        args: curl -X POST "https://api.digitalocean.com/v2/apps/${{ secrets.CURL_APP_ID }}/deployments" -H "${{ secrets.CURL_HEADER }}" -d "${{ secrets.CURL_BODY }}"
     
