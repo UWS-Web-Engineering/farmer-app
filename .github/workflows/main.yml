@@ -38,7 +38,7 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@master
       with:
-        url: "https://api.digitalocean.com/v2/apps/$APP_ID/deployments"
+        url: "https://api.digitalocean.com/v2/apps/${{ secrets.APP_ID }}/deployments"
         method: 'POST'
         data: '{"force_build": true}'
         bearerToken: ${{ secrets.DIGITALOCEAN_TOKEN }}
