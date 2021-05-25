@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Response;
 use App\Http\Controllers\QueryController;
+use App\Http\Controllers\CropController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +50,6 @@ Route::get('/client', function () {
     return view('client', ['title' => 'Woolworths']);
 });
 
-Route::get('/crops', function () {
-    return view('crops');
-});
+Route::get('/crops', [CropController::class,'getCrops']);
 
 

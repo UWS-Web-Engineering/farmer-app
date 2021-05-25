@@ -22,122 +22,21 @@
 
 @section('content')
 <div class="b-nav-spacer"></div>
-<!-- Header -->
-
-<!-- Photo Grid -->
-
-<!-- <ul class="iconlist">
-<li class="pdf"><a href="#">Milk</a></li>
-<li class="text"><a href="#">Eggs</a></li>
-<li class="htm"><a href="#">Cheese</a></li>
-<li class="doc"><a href="#">Vegetables</a></li>
-<li class="text"><a href="#">Fruit</a></li>
-</ul> -->
-
-
-<div class="p-row"> 
-  <div class="p-column">
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Carrot 
+<div class="b-clients-container">
+    @foreach($crops as $crops => $crop)
+        <a href="/client">
+            <div class="b-section">
+                <p class="b-heading b-heading-text">
+                    {{ $crop['cropName'] }}
+                </p>
+                <p class="b-heading b-heading-text">
+                    {{ $crop['weight'] }}
+                </p>
             </div>
         </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Lettuce 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Beans 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Avocado 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Orange 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Apple 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Banana 
-            </div>
-        </a>
-    </li>
-  </div>
-  <div class="p-column">
-  <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Carrot 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Spinach 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Carrot 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Radish 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Squash 
-            </div>
-        </a>
-    </li>
-  </div>  
-
-  <div class="b-nav-spacer"></div>
+    @endforeach
+@endsection
+<div class="b-nav-spacer"></div>
 <script>
 // Get the elements with class="column"
 var elements = document.getElementsByClassName("column");
