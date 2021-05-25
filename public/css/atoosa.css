@@ -1,12 +1,15 @@
 :root {
     --a-spacing: 12px;
+    --a-spacing--small: calc(var(--a-spacing) / 2);
     --a-spacing--large: calc(var(--a-spacing) * 2);
+    --a-spacing--x-large: calc(var(--a-spacing) * 4);
     --a-radius: 2px;
     --a-primary-color: #65816B;
     --a-white-color: #fff;
     --a-black-color: #000;
     --a-light-color: #efefef;
     --a-dark-color: #494949;
+    --a-red-color: #e23737;
 }
 html {
     font-family: 'Roboto', sans-serif;
@@ -17,10 +20,16 @@ body {
 
 /* Colors */
 .a-primary {
-    background: var(--a-primary-color);
+    background: var(--a-primary-color) !important;
 }
 .a-primary--text {
-    color: var(--a-primary-color);
+    color: var(--a-primary-color) !important;
+}
+.a-red {
+    background: var(--a-red-color) !important;
+}
+.a-red--text {
+    color: var(--a-red-color) !important;
 }
 /* Text */
 .a-text-bold {
@@ -50,6 +59,9 @@ body {
 }
 .a-justify-content-center {
     justify-content: center;
+}
+.a-justify-content-space-between {
+    justify-content: space-between;
 }
 /* Spacing */
 .a-mt {
@@ -83,6 +95,7 @@ body {
 .a-btn {
     background: var(--a-primary-color);
     color: var(--a-white-color);
+    border: none;
     border-radius: var(--a-radius);
     padding: var(--a-spacing) var(--a-spacing--large);
     text-transform: uppercase;
@@ -105,4 +118,40 @@ body {
 .a-link:hover {
     text-decoration: underline;
 }
-
+/* list */
+.a-list {
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.a-list > li {
+    list-style-type: none;
+}
+.a-list > li > a,
+.a-list > li > button {
+    padding: var(--a-spacing--large) var(--a-spacing--small);
+    display: block;
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    text-align: start;
+    font-weight: bold;
+}
+.a-list > li:hover {
+    background: rgba(0,0,0,.1);
+}
+/* Modal */
+.a-modal {
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: var(--a-spacing--x-large);
+    box-shadow: 0 6px 36px rgba(0,0,0,.15);
+    max-width: 275px;
+    box-sizing: border-box;
+}
+.a-modal::backdrop {
+    backdrop-filter: blur(3px);
+}
