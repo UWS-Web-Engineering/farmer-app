@@ -10,5 +10,10 @@
       "cropName":"string",
       "imageUri":"string",
       "weight":"string"
-    }  
+    },
+     "Client": {
+      "clientId":"int",
+      "name":"string",
+      "weight":"string"
+    },
 }
