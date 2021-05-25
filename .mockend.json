@@ -15,5 +15,5 @@
       "clientId":"number",
       "name":"string",
       "weight":"string"
-    },
+    }
 }
