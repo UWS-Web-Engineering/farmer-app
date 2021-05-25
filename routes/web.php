@@ -31,6 +31,8 @@ Route::view('/login', 'users/login');
 
 Route::view('/details', 'users/details');
 
+Route::view('/settings', 'users/settings');
+
 Route::get('/queries', [QueryController::class,'getQueries']);
 
 Route::get('/clients', function () {

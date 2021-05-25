@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('content')
-	<div class="a-container a-flex a-flex-column a-justify-content-center">
+	<form name="registerForm" class="a-container a-flex a-flex-column a-justify-content-center">
 	<svg  class="a-align-self-center" width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.25 21.375H0C0 48.9176 22.3324
  71.25 49.875 71.25V103.312C49.875 105.272 
@@ -13,11 +13,60 @@
 	114 32.9309 114 7.125H99.75Z" fill="#65816B"
 	/> 
 </svg>
+
+		
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
-		<input type="text" placeholder="Mobile Number" class="a-text-field a-mb" />
-		<input type="text" placeholder="Password" class="a-text-field a-mb" />
-		<input type="text" placeholder="Confirm Password" class="a-text-field a-mb" />
-		<a href="/details" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end">Register</a>
+		<input type="text" name="userName" placeholder="Username" required class="a-text-field a-mb" />
+		<input type="text" name="password" placeholder="Password" required class="a-text-field a-mb" />
+		<input type="text" name="passwordConfirmation" placeholder="Confirm Password" required class="a-text-field a-mb" />
+		<input type="number" name="regionId" placeholder="Region ID" required class="a-text-field a-mb" />
+		<input type="submit" name="submitBtn" value="Register" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
+
 		<a href="/login" class="a-link a-text-light a-align-self-center a-mt--xl">Already have an account? <span class="a-primary--text a-text-bold">Log in</span></a>
-	</div>
+	</form>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script>
+	console.log(axios);
+		// Define form variable
+		let form = document.forms['registerForm'];
+		// Call register function on form submission
+		form.addEventListener("submit", register);
+		// Reset validity of password confirmation on change
+		form.passwordConfirmation.addEventListener("change", function() {
+			form.passwordConfirmation.setCustomValidity("");
+		})
+		async function register(e) {
+			// Prevent default form submission
+			e.preventDefault();
+			
+			// Check if password confirmation matches
+			if (form.password.value != form.passwordConfirmation.value) {
+				form.passwordConfirmation.setCustomValidity("Doesn't match with above!");
+			}
+
+			// Check if the form is valid
+			if (form.checkValidity()) {
+				// Disable submit button
+				form.submitBtn.disabled = true;
+				form.submitBtn.value = "Please wait...";
+
+				try {
+					// Create from data from form
+					const farmer = new FormData(form);
+					// Send POST request to backend
+					const response = await axios.post('/api/mock/farmers', farmer);
+					// Extract new farmer ID
+					let farmerID = response.data.id;
+					// Redirect to /details and pass farmerID
+					window.location.replace(`details?farmerID=${farmerID}`);
+				} catch(e) {
+					alert(e.message);
+				} finally {
+					// Renable submit button
+					form.submitBtn.value = "Register"
+					form.submitBtn.disabled = false
+				}
+			}
+		}
+	</script>
 @endsection
