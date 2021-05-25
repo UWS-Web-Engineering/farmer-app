@@ -5,5 +5,10 @@
       "query": "string",
       "isRead": "boolean",
       "queryDate": "date"
-    }
+    },
+    "Crop": {
+      "cropName":"string",
+      "imageUri":"string",
+      "weight":"string"
+    }  
 }
