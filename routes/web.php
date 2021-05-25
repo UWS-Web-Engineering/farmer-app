@@ -23,7 +23,6 @@ Route::get('/requests', function () {
     return view('requests', ['title' => 'New Requests']);
 });
 
-
 Route::view('/crops', 'crops/list');
 
 Route::view('/register', 'users/register');
