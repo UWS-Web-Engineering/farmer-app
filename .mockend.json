@@ -12,7 +12,7 @@
       "weight":"string"
     },
      "Client": {
-      "clientId":"integer",
+      "clientId":"number",
       "name":"string",
       "weight":"string"
     },
