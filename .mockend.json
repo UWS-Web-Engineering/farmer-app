@@ -15,5 +15,11 @@
       "clientId":"number",
       "name":"string",
       "weight":"string"
+    },
+    "Request": {
+      "id":"number",
+      "clientName":"string",
+      "weight":"string",
+      "cropName":"string"
     }
 }
