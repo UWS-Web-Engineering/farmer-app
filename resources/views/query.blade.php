@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-<div class="b-nav-spacer"></div>
 <div class="b-clients-container">
     <div class="b-back">
         <a href="/queries">
@@ -20,7 +19,7 @@
             <div class="b-message">
                 {{ $query['query'] }}
             </div>
-            <div class="b-btn b-btn-y">
+            <div class="b-query-response b-btn b-btn-y" data-response="Y" data-queryid="{{$query['id']}}" id="checkbox-{{$query['id']}}">
                 Yes
             </div>
             <div class="b-btn b-btn-n">
@@ -29,22 +28,29 @@
             <div class="b-btn b-btn-a">
                 Ask Help
             </div>
+            <!-- <div class="checked-item checklist-item" id="item-{{$query['id']}}"> -->
+                
+            <!-- </div> -->
         </div>
         <div class="b-date">
-            10 APR, 7AM
+        @php 
+            $timestamp = preg_replace( '/[^0-9]/', '', $query['queryDate']);
+            $date = date("d M, h:i A", $timestamp / 1000);
+            echo $date;
+        @endphp
         </div>
     </div>
     <div class="b-msg-right">
-        <div class="b-bubble">
+        <!-- <div class="b-bubble">
             <div class="b-message">
-                No.
+                Yes
             </div>
         </div>
         <div class="b-date">
             10 APR, 7AM
-        </div>
+        </div> -->
     </div>
-    <div class="b-msg-right">
+    <!-- <div class="b-msg-right">
         <div class="b-bubble">
             <div class="b-message">
                 Yes.
@@ -59,8 +65,7 @@
         <div class="b-btn b-btn-y">
             Send
         </div>
-    </div>
-<div class="b-bottomnav-spacer"></div>
+    </div> -->
 </div>
 @endsection
 

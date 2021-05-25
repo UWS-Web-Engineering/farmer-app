@@ -36,7 +36,9 @@
 	</nav>
 
 	<main>
+		<div class="b-nav-spacer"></div>
 		@yield('content')
+		<div class="b-bottomnav-spacer"></div>
 	</main>
 
 	<nav>
@@ -44,5 +46,11 @@
 	</nav>
     <!-- Include your App Component -->
     <!-- <App /> -->
+
+	<!-- Include the app.js file -->
+    <!-- <script src="{{ 'js/app.js' }}" defer></script> -->
+	<!-- // jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{{asset('js/betty.js')}}" defer></script>
   </body>
 </html>

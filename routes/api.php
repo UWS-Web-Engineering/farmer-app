@@ -128,3 +128,5 @@ Route::prefix('mock')->group(function () {
         }        
     });
 });
+
+Route::post('api/query/{query-id}/reply', 'QueryController@sendResponse');

@@ -135,6 +135,10 @@ main {
 .b-section {
     /* background-color: red;; */
     padding: 5px 0;
+    /* border-bottom: 1px solid #A7A7A7; */
+}
+
+.b-queries-container a:last-child .b-section {
     border-bottom: 1px solid #A7A7A7;
 }
 
@@ -251,6 +255,7 @@ main {
 .b-date {
     font-family: 'Montserrat', sans-serif;
     font-size: .8em;
+    text-transform: uppercase;
 }
 
 .b-btn-y {
@@ -286,3 +291,10 @@ main {
     float: right;
 }
 
+.response-1 {
+    display: none;
+}
+
+.display {
+    display: block;
+}

@@ -129,7 +129,6 @@
             Have you done this particular task?
         </h2>
 	</div>
-    
 </div>
 @endsection
 
