@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('content')
-	<div class="a-container a-flex a-flex-column a-justify-content-center">
+	<form name="loginForm" class="a-container a-flex a-flex-column a-justify-content-center">
 	<svg  class="a-align-self-center" width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.25 21.375H0C0 48.9176 22.3324
  71.25 49.875 71.25V103.312C49.875 105.272 
@@ -14,9 +14,45 @@
 	/> 
 </svg>
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
-		<input type="text" placeholder="Username" class="a-text-field a-mb" />
-		<input type="text" placeholder="Password" class="a-text-field a-mb" />
-		<a href="/crops" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end">LOG IN</a>
+		<input type="text" name="userName" placeholder="Username" required class="a-text-field a-mb" />
+		<input type="password" name="password" placeholder="Password" required class="a-text-field a-mb" />
+		<input type="submit" name="submitBtn" value="LOG IN" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
 		<a href="/register" class="a-link a-text-light a-align-self-center a-mt--xl">Don't have an account? <span class="a-primary--text a-text-bold">Register</span></a>
-	</div>
+	</form>
+
+	<script>
+		// Define form variable
+		let form = document.forms['loginForm'];
+		// Call submit function on form submission
+		form.addEventListener("submit", submit);
+		async function submit(e) {
+			// Prevent default form submission
+			e.preventDefault();
+
+			// Check if the form is valid
+			if (form.checkValidity()) {
+				// Disable submit button
+				form.submitBtn.disabled = true;
+				form.submitBtn.value = "Please wait...";
+
+				try {
+					// Create from data from form
+					const farmer = new FormData(form);
+					// Send POST request to auth endpoint
+					const response = await axios.post('/api/mock/auth', farmer);
+					// Set auth cookies
+					Cookies.set('farmerID', response.data.farmerID);
+					Cookies.set('token', response.data.token);
+					// Redirect to /crops
+					window.location.replace('/crops');
+				} catch(e) {
+					alert(e.message);
+				} finally {
+					// Enable submit button
+					form.submitBtn.value = "LOG IN"
+					form.submitBtn.disabled = false
+				}
+			}
+		}
+	</script>
 @endsection

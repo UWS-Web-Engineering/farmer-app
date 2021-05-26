@@ -45,13 +45,20 @@
 
 				try {
 					// Create from data from form
-					const farmer = new FormData(form);
-
-					// Send PATCH request to backend
-					const response = await axios.post(
+					const updatedFarmer = new FormData(form);
+					// Send PATCH request to /farmers/id
+					const updatedFarmerResponse = await axios.post(
 						`/api/mock/farmers/${farmerID}`,
-						farmer,
+						updatedFarmer,
 						{ params: { _method: 'PATCH' } });
+					// Authenticate farmer
+					farmer = new FormData();
+					farmer.append('userName', updatedFarmerResponse.data.userName);
+					farmer.append('password', updatedFarmerResponse.data.password);
+					const authResponse = await axios.post('/api/mock/auth', farmer);
+					// Set auth cookies
+					Cookies.set('farmerID', authResponse.data.farmerID);
+					Cookies.set('token', authResponse.data.token);
 					// Redirect to /crops
 					window.location.replace('/crops');
 				} catch(e) {
