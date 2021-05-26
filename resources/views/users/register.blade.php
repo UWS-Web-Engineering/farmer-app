@@ -62,7 +62,7 @@
 				} catch(e) {
 					alert(e.message);
 				} finally {
-					// Renable submit button
+					// Enable submit button
 					form.submitBtn.value = "Register"
 					form.submitBtn.disabled = false
 				}
