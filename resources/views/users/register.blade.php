@@ -24,9 +24,8 @@
 
 		<a href="/login" class="a-link a-text-light a-align-self-center a-mt--xl">Already have an account? <span class="a-primary--text a-text-bold">Log in</span></a>
 	</form>
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 	<script>
-	console.log(axios);
 		// Define form variable
 		let form = document.forms['registerForm'];
 		// Call register function on form submission
@@ -62,7 +61,7 @@
 				} catch(e) {
 					alert(e.message);
 				} finally {
-					// Renable submit button
+					// Enable submit button
 					form.submitBtn.value = "Register"
 					form.submitBtn.disabled = false
 				}

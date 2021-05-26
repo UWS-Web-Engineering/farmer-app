@@ -20,9 +20,8 @@
     	<input type="text" name="farmerAddr" required placeholder="Address" class="a-text-field a-mb" />
 		<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
 	</form>
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	
 	<script>
-	console.log(axios);
 		// Read farmerID from URL
 		const urlParams = new URLSearchParams(window.location.search);
 		const farmerID = urlParams.get('farmerID');
@@ -46,19 +45,26 @@
 
 				try {
 					// Create from data from form
-					const farmer = new FormData(form);
-
-					// Send PATCH request to backend
-					const response = await axios.post(
+					const updatedFarmer = new FormData(form);
+					// Send PATCH request to /farmers/id
+					const updatedFarmerResponse = await axios.post(
 						`/api/mock/farmers/${farmerID}`,
-						farmer,
+						updatedFarmer,
 						{ params: { _method: 'PATCH' } });
+					// Authenticate farmer
+					farmer = new FormData();
+					farmer.append('userName', updatedFarmerResponse.data.userName);
+					farmer.append('password', updatedFarmerResponse.data.password);
+					const authResponse = await axios.post('/api/mock/auth', farmer);
+					// Set auth cookies
+					Cookies.set('farmerID', authResponse.data.farmerID);
+					Cookies.set('token', authResponse.data.token);
 					// Redirect to /crops
 					window.location.replace('/crops');
 				} catch(e) {
 					alert(e.message);
 				} finally {
-					// Renable submit button
+					// Enable submit button
 					form.submitBtn.value = "SUBMIT"
 					form.submitBtn.disabled = false
 				}
