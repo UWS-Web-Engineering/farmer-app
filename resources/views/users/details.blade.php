@@ -20,9 +20,8 @@
     	<input type="text" name="farmerAddr" required placeholder="Address" class="a-text-field a-mb" />
 		<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
 	</form>
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	
 	<script>
-	console.log(axios);
 		// Read farmerID from URL
 		const urlParams = new URLSearchParams(window.location.search);
 		const farmerID = urlParams.get('farmerID');

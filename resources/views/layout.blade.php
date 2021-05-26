@@ -22,6 +22,10 @@
 	<link rel="stylesheet" type="text/css" href="/css/betty.css">
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 
+	<!-- JS libs -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
     <!-- Include the app.js file -->
     <!-- <script src="{{ 'js/app.js' }}" defer></script> -->
 	<!-- <script type="text/javascript" src="{{asset('js/app.js')}}" defer></script> -->
