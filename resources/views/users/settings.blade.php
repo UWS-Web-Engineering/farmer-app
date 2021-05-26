@@ -48,6 +48,8 @@
 	});
 	
 	yesToLogoutBtn.addEventListener('click', function() {
+		Cookies.remove('farmerID');
+		Cookies.remove('token');
 		window.location.replace('login');
 	});
 </script>
