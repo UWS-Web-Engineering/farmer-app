@@ -16,11 +16,12 @@
 
 		
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
-		<input type="text" name="userName" placeholder="Username" required class="a-text-field a-mb" />
 		{{ csrf_field() }}
+		<input type="text" name="username" placeholder="Username" required class="a-text-field a-mb" />
+		<input type="hidden" name="userRole" value="Farmer" />
 		<input type="text" name="password" placeholder="Password" required class="a-text-field a-mb" />
-		<input type="text" name="passwordConfirmation" placeholder="Confirm Password" required class="a-text-field a-mb" />
-		<input type="number" name="regionId" placeholder="Region ID" required class="a-text-field a-mb" />
+		<input type="text" name="password_confirmation" placeholder="Confirm Password" required class="a-text-field a-mb" />
+		<!-- <input type="number" name="regionId" placeholder="Region ID" required class="a-text-field a-mb" /> -->
 		<input type="submit" name="submitBtn" value="Register" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
 
 		<a href="/login" class="a-link a-text-light a-align-self-center a-mt--xl">Already have an account? <span class="a-primary--text a-text-bold">Log in</span></a>
@@ -32,16 +33,16 @@
 		// Call register function on form submission
 		form.addEventListener("submit", register);
 		// Reset validity of password confirmation on change
-		form.passwordConfirmation.addEventListener("change", function() {
-			form.passwordConfirmation.setCustomValidity("");
+		form.password_confirmation.addEventListener("change", function() {
+			form.password_confirmation.setCustomValidity("");
 		})
 		async function register(e) {
 			// Prevent default form submission
 			e.preventDefault();
 			
 			// Check if password confirmation matches
-			if (form.password.value != form.passwordConfirmation.value) {
-				form.passwordConfirmation.setCustomValidity("Doesn't match with above!");
+			if (form.password.value != form.password_confirmation.value) {
+				form.password_confirmation.setCustomValidity("Doesn't match with above!");
 			}
 
 			// Check if the form is valid
@@ -49,12 +50,14 @@
 				// Disable submit button
 				form.submitBtn.disabled = true;
 				form.submitBtn.value = "Please wait...";
-
 				try {
 					// Create from data from form
 					const farmer = new FormData(form);
 					// Send POST request to backend
-					const response = await axios.post('/api/mock/farmers', farmer);
+					const response = await axios.post('https://usercontroller.include.ninja/api/signup', farmer);
+					// Set auth cookies
+					Cookies.set('farmerID', response.data.user.id);
+					Cookies.set('token', response.data.token);
 					// Extract new farmer ID
 					let farmerID = response.data.id;
 					// Redirect to /details and pass farmerID
