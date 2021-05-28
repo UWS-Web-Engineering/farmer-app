@@ -43,23 +43,14 @@
 				// Disable submit button
 				form.submitBtn.disabled = true;
 				form.submitBtn.value = "Please wait...";
-
 				try {
 					// Create from data from form
-					const updatedFarmer = new FormData(form);
+					const farmer = new FormData(form);
 					// Send PATCH request to /farmers/id
-					const updatedFarmerResponse = await axios.post(
+					const response = await axios.post(
 						`/api/mock/farmers/${farmerID}`,
-						updatedFarmer,
+						farmer,
 						{ params: { _method: 'PATCH' } });
-					// Authenticate farmer
-					farmer = new FormData();
-					farmer.append('userName', updatedFarmerResponse.data.userName);
-					farmer.append('password', updatedFarmerResponse.data.password);
-					const authResponse = await axios.post('/api/mock/auth', farmer);
-					// Set auth cookies
-					Cookies.set('farmerID', authResponse.data.farmerID);
-					Cookies.set('token', authResponse.data.token);
 					// Redirect to /crops
 					window.location.replace('/crops');
 				} catch(e) {
