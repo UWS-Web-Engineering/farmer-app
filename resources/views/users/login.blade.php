@@ -14,7 +14,8 @@
 	/> 
 </svg>
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
-		<input type="text" name="userName" placeholder="Username" required class="a-text-field a-mb" />
+		{{ csrf_field() }}
+		<input type="text" name="username" placeholder="Username" required class="a-text-field a-mb" />
 		<input type="password" name="password" placeholder="Password" required class="a-text-field a-mb" />
 		<input type="submit" name="submitBtn" value="LOG IN" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
 		<a href="/register" class="a-link a-text-light a-align-self-center a-mt--xl">Don't have an account? <span class="a-primary--text a-text-bold">Register</span></a>
@@ -39,9 +40,9 @@
 					// Create from data from form
 					const farmer = new FormData(form);
 					// Send POST request to auth endpoint
-					const response = await axios.post('/api/mock/auth', farmer);
+					const response = await axios.post('https://usercontroller.include.ninja/api/login', farmer);
 					// Set auth cookies
-					Cookies.set('farmerID', response.data.farmerID);
+					Cookies.set('farmerID', response.data.user.id);
 					Cookies.set('token', response.data.token);
 					// Redirect to /crops
 					window.location.replace('/crops');
