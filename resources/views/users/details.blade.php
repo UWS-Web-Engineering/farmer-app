@@ -14,6 +14,7 @@
 	/> 
 </svg>
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
+		{{ csrf_field() }}
 		<input type="email" name="farmerEmail" required placeholder="Email Address" class="a-text-field a-mb" />
 		<input type="text" name="farmerName" required placeholder="Name" class="a-text-field a-mb" />
     	<input type="phone" name="farmerPhone" required placeholder="Phone Number" class="a-text-field a-mb" />

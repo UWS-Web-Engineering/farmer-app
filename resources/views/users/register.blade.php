@@ -17,6 +17,7 @@
 		
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
 		<input type="text" name="userName" placeholder="Username" required class="a-text-field a-mb" />
+		{{ csrf_field() }}
 		<input type="text" name="password" placeholder="Password" required class="a-text-field a-mb" />
 		<input type="text" name="passwordConfirmation" placeholder="Confirm Password" required class="a-text-field a-mb" />
 		<input type="number" name="regionId" placeholder="Region ID" required class="a-text-field a-mb" />
