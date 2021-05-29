@@ -16,12 +16,15 @@
      "Client": {
       "clientId":"number",
       "name":"string",
-      "weight":"string"
+      "weight":"string",
+      "date":"date",
+      "payment":"string"
     },
     "Request": {
       "id":"number",
       "clientName":"string",
       "weight":"string",
-      "cropName":"string"
+      "contract":"string",
+      "down":"string"
     }
 }
