@@ -21,13 +21,12 @@
 @endsection
 
 @section('content')
-<div class="b-nav-spacer"></div>
 <div class="b-clients-container">
 <div class="p-row"> 
     @foreach($crops as $crops => $crop)
     <div class="p-column">
         <li class="pdf">
-        <a href="/clients">
+		    <a href="/clients">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
              <div class="crop-details"> 
              {{ $crop['cropName'] }} 
@@ -40,7 +39,6 @@
     </div>
     @endforeach
 </div>
-<div class="b-nav-spacer"></div>
 @endsection
 
 @section('bottomnav')

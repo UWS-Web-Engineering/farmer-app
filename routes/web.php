@@ -50,9 +50,11 @@ Route::get('/clients', [ClientController::class,'getClients']);
 
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
 
-Route::get('/client', function () {
-    return view('client', ['title' => 'Woolworths']);
-});
+// Route::get('/client', function () {
+//     return view('client', ['title' => 'Woolworths']);
+// });
+
+Route::get('/client/{client_id}', [ClientController::class,'getClient']);
 
 Route::get('/crops', [CropController::class,'getCrops']);
 

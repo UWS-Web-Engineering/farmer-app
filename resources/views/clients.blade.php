@@ -5,22 +5,20 @@
 @endsection
 
 @section('content')
-<div class="b-nav-spacer"></div>
     @foreach($clients as $clients => $client)
         <li class="pdf">
-        <a href="/client">   
+        <a href="/client/{{ $client['id'] }}">   
              <div class="client-container"> 
-             <a class>
-             {{ $client['name'] }} </a>
-             <b class>
+             <div class="a">
+             {{ $client['name'] }} </div>
+             <div class="b">
              {{ $client['weight'] }} 
-            </b class>
+            </div>
             </div>
         </a>
         </li>
     @endforeach
 </div>
-<div class="b-nav-spacer"></div>
 @endsection
 
 @section('bottomnav')

@@ -58,6 +58,7 @@ width: 100px;
 position: absolute;
 top: 50%;
 left: 50%;
+color: white;
 transform: translate(-50%, -50%);
 text-align: center;
 }
@@ -70,6 +71,7 @@ font-size: 10px;
 position: absolute;
 top: 55%;
 left: 50%;
+color: white;
 transform: translate(-50%, -50%);
 text-align: center;
 }
@@ -87,22 +89,32 @@ margin: 20px 0;
 font-size: 20px;
 }
 
-.client-container a {
+.client-container .a {
     text-decoration: bold;
     font-size: 20px;
     text-align: left;
     color: white;
-    margin-top: 20px;
+    top: 50%;
+    margin-top: auto;
+    position: absolute;
+    margin-bottom: auto;
     margin-left: 10px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
-.client-container b {
+.client-container .b {
     text-decoration: none;
+    float: right;
     font-size: 14px;
     color: white;
+    position: relative;
     text-align: right;
-    margin-top: 20px;
-    margin-left: 90px;
+    top: 50%;
+    margin-left: auto;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-right: 10px;
 }
 
 .pdf bg {
@@ -117,13 +129,14 @@ font-size: 20px;
 {
 height: 20px;
 width: 100px;
-font-size: 14px;
+font-size: 16px;
 position: absolute;
 top: 55%;
 left: 50%;
 transform: translate(-70%, -170%);
 text-align: left;
-color: black;
+text-decoration: medium;
+color: #474747;
 text-decoration: bold;
 }
 
@@ -138,26 +151,27 @@ text-decoration: bold;
 {
 height: 10px;
 width: 100px;
-font-size: 10px;
+font-size: 12px;
+text-decoration: light;
 position: absolute;
 top: 55%;
 left: 50%;
 transform: translate(-70%, -120%);
 text-align: left;
-color: black;
+color: #474747;
 }
 
 .request-client-weight
 {
 height: 10px;
 width: 100px;
-font-size: 10px;
+font-size: 12px;
 position: absolute;
 top: 55%;
 left: 50%;
 transform: translate(-70%, 0%);
 text-align: left;
-color: black;
+color: #474747;
 }
 
 .request-client-description a {
