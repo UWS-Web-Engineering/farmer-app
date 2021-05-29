@@ -3,7 +3,7 @@
       "id": "id",
       "officerMessage": "string",
       "createdAt": "date",
-      "farmerMessage": null,
+      "farmerMessage": "null",
       "updatedAt": "date",
       "isRead": "boolean",
       "clientName": "string"
