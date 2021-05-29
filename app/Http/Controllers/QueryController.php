@@ -24,4 +24,14 @@ class QueryController extends Controller
 
         return view('query', compact('query', 'title'));
     }
+
+    function getRequest($id){
+        $url = "https://mockend.com/UWS-Web-Engineering/farmer-app/request/" . $id;
+        $response = http::get($url);
+
+        $request = json_decode($response, true);
+        $title = $request['clientName'];
+
+        return view('request', compact('request', 'title'));
+    }
 }
