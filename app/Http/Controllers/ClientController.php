@@ -18,4 +18,22 @@ class ClientController extends Controller
 
         return view('clients', compact('clients', 'title'));
     }
+
+    function getClient($id){
+
+        // Client Info
+        $url = "https://mockend.com/UWS-Web-Engineering/farmer-app/clients/" . $id;
+        $response = http::get($url);
+
+        $client = json_decode($response, true);
+        $title = $client['name'];
+
+        // Queries
+        $url_q = "https://mockend.com/UWS-Web-Engineering/farmer-app/queries?limit=10";
+        $response_q = http::get($url_q);
+
+        $queries = json_decode($response_q, true);
+
+        return view('client', compact('client', 'queries', 'title'));
+    }
 }

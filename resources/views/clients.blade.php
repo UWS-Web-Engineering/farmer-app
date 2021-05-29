@@ -8,7 +8,7 @@
 <div class="b-nav-spacer"></div>
     @foreach($clients as $clients => $client)
         <li class="pdf">
-        <a href="/client">   
+        <a href="/client/{{ $client['id'] }}">   
              <div class="client-container"> 
              <div class="a">
              {{ $client['name'] }} </div>
