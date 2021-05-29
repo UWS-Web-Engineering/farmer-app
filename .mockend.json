@@ -25,7 +25,11 @@
       "id":"number",
       "clientName":"string",
       "weight":"string",
-      "contract":"string",
-      "down":"string"
+      "cropName":"string",
+      "price":"string",
+      "fulfillDate":"date",
+      "farmerResponse":"string",
+      "updatedAt":"date",
+      "createdAt":""
     }
 }
