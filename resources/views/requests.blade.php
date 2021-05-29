@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
 <div class="b-nav-spacer"></div>
 <div class="p-row"> 
 @foreach($requests as $requests => $request)
@@ -27,6 +28,7 @@
     </div>
 	@endforeach
 <div class="b-nav-spacer"></div>
+
 @endsection
 
 @section('bottomnav')
