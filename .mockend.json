@@ -1,10 +1,12 @@
 {
     "Query": {
-      "id": "id",
-      "sender": "string",
-      "query": "string",
+      "queryID": "id",
+      "officerMessage": "string",
+      "createdAt": "date",
+      "farmerMessage": "string",
+      "updatedAt": "date",
       "isRead": "boolean",
-      "queryDate": "date"
+      "clientName": "string"
     },
     "Crop": {
       "cropName":"string",
