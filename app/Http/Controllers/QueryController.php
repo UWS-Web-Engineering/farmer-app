@@ -24,8 +24,4 @@ class QueryController extends Controller
 
         return view('query', compact('query', 'title'));
     }
-
-    // function sendResponse(Request $request){
-    //     echo 'Response';
-    // }
 }
