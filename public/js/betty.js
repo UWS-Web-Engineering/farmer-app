@@ -80,7 +80,8 @@ $(document).ready(function() {
         var response = $(this).data('response');
         var request_id = $(this).data('requestid');
         var url = 'api/farmeroffer';
-        var object = {requestID: request_id, farmerResponse: response};
+        var farmerID = Cookies.get('farmerID');
+        var object = {farmerID: farmerID, requestID: request_id, farmerResponse: response};
         var answer = '';
 
         // Hide ask buttons once ask help submit button is clicked
@@ -124,10 +125,11 @@ $(document).ready(function() {
         var weight = $('textarea#weight').val();
         var price = $('textarea#price').val();
         var date = $('textarea#date').val();
+        var farmerID = Cookies.get('farmerID');
         
         var request_id = $(this).data('requestid');
         var url = 'api/farmeroffer';
-        var object = {requestID: request_id, farmerResponse: 'Counter', weight:weight, price:price, fulfillDate:date};
+        var object = {farmerID: farmerID, requestID: request_id, farmerResponse: 'Counter', weight:weight, price:price, fulfillDate:date};
         var answer = '<div><div class="b-bubble"><div class="b-message">I would like to make a counter offer. Weight: '+weight+'. Price: '+price+'. Fulfilment Date: '+date+'.</div></div></div>';
         console.log(object);
 
