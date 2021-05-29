@@ -87,7 +87,7 @@ margin: 20px 0;
 font-size: 20px;
 }
 
-.client-container a {
+.client-container .a {
     text-decoration: bold;
     font-size: 20px;
     text-align: left;
@@ -96,7 +96,7 @@ font-size: 20px;
     margin-left: 10px;
 }
 
-.client-container b {
+.client-container .b {
     text-decoration: none;
     font-size: 14px;
     color: white;

@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Cookies;
 
 class RequestController extends Controller
 {
     function getRequests(){
-        $response = http::get('https://mockend.com/UWS-Web-Engineering/farmer-app/requests?limit=10');
+        $response = Http::withHeaders([
+            'Authorization' => $_COOKIE['token']
+        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/requests?limit=10');
+      
         $requests = json_decode($response, true);
         $title = 'Requests';
 
