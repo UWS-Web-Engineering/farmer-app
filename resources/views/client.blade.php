@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-<div class="b-nav-spacer"></div>
 <div class="b-clients-container">
     <div class="b-back">
         <a href="/clients">

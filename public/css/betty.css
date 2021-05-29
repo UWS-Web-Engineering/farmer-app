@@ -123,10 +123,24 @@ main {
 }
 
 .b-queries-container,
-.b-clients-container {
+.b-clients-container,
+.b-requests-container {
     /* padding-top: 10px; */
     width: 93%;
     margin: 0 auto;
+}
+
+.b-requests-container .b-msg-left {
+    width: 75%;
+    font-weight: 100;
+}
+
+.b-requests-container .b-msg-left .b-message {
+    /* margin-bottom: 10px; */
+}
+
+.b-strong {
+    font-weight: 500;
 }
 
 .b-queries-container .b-section:first-child {
@@ -243,6 +257,7 @@ main {
     border-radius: 10px;
     border-bottom-right-radius: 0;
     font-family: 'Roboto', sans-serif;
+    max-width: 80%;
 }
 
 .b-bubble .b-message {
@@ -287,6 +302,12 @@ main {
     height: 150px;
 }
 
+.b-requests-container .b-msg-textbox {
+    height: auto;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+
 .b-msg-textbox textarea {
     width: 100%;
     background-color: #F6F6F6;
@@ -295,6 +316,11 @@ main {
     padding: 20px;
     margin-top: 30px;
     font-family: 'Roboto', sans-serif;
+}
+
+.b-requests-container .b-msg-textbox textarea {
+    margin: 0;
+    padding: 10px;
 }
 
 .b-msg-textbox .b-btn {

@@ -40,22 +40,12 @@ Route::get('/queries', [QueryController::class,'getQueries']);
 
 Route::get('/clients', [ClientController::class,'getClients']);
 
-//Route::get('/clients', function () {
- //   return view('clients', ['title' => 'Woolworths']);
-//});
-
-// Route::get('/query', function () {
-//     return view('query', ['title' => 'Query']);
-// });
-
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
-
-// Route::get('/client', function () {
-//     return view('client', ['title' => 'Woolworths']);
-// });
 
 Route::get('/client/{client_id}', [ClientController::class,'getClient']);
 
 Route::get('/crops', [CropController::class,'getCrops']);
 
 Route::get('/requests', [RequestController::class,'getRequests']);
+
+Route::get('/request/{request_id}', [QueryController::class,'getRequest']);
