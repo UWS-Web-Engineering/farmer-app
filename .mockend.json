@@ -18,7 +18,8 @@
       "name":"string",
       "weight":"string",
       "date":"date",
-      "payment":"string"
+      "contract":"string",
+      "down":"string"
     },
     "Request": {
       "id":"number",
