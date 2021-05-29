@@ -22,150 +22,27 @@
 
 @section('content')
 <div class="b-nav-spacer"></div>
-<!-- Header -->
-
-<!-- Photo Grid -->
-
-<!-- <ul class="iconlist">
-<li class="pdf"><a href="#">Milk</a></li>
-<li class="text"><a href="#">Eggs</a></li>
-<li class="htm"><a href="#">Cheese</a></li>
-<li class="doc"><a href="#">Vegetables</a></li>
-<li class="text"><a href="#">Fruit</a></li>
-</ul> -->
-
-
+<div class="b-clients-container">
 <div class="p-row"> 
-  <div class="p-column">
-    <li class="pdf">
+    @foreach($crops as $crops => $crop)
+    <div class="p-column">
+        <li class="pdf">
         <a href="/clients">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
              <div class="crop-details"> 
-                Carrot 
+             {{ $crop['cropName'] }} 
+            </div>
+            <div class="crop-description"> 
+             {{ $crop['weight'] }} 
             </div>
         </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Lettuce 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Beans 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Avocado 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Orange 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Apple 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Banana 
-            </div>
-        </a>
-    </li>
-  </div>
-  <div class="p-column">
-  <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Carrot 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Spinach 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Carrot 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Radish 
-            </div>
-        </a>
-    </li>
-    <li class="pdf">
-        <a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
-             <div class="crop-details"> 
-                Squash 
-            </div>
-        </a>
-    </li>
-  </div>  
-
-  <div class="b-nav-spacer"></div>
-<script>
-// Get the elements with class="column"
-var elements = document.getElementsByClassName("column");
-// Declare a loop variable
-var i;
-
-// Two images side by side
-function two() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.msFlex = "50%";  // IE10
-    elements[i].style.flex = "50%";
-  }
-}
-
-// Add active class to the current button (highlight it)
-var header = document.getElementById("myHeader");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-
-</script>
-
+        </li>
+    </div>
+    @endforeach
+</div>
+<div class="b-nav-spacer"></div>
 @endsection
+
 @section('bottomnav')
     @include('bottomnav');
 @endsection

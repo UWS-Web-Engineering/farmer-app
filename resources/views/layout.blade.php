@@ -22,6 +22,10 @@
 	<link rel="stylesheet" type="text/css" href="/css/betty.css">
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 
+	<!-- JS libs -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
     <!-- Include the app.js file -->
     <!-- <script src="{{ 'js/app.js' }}" defer></script> -->
 	<!-- <script type="text/javascript" src="{{asset('js/app.js')}}" defer></script> -->
@@ -32,7 +36,9 @@
 	</nav>
 
 	<main>
+		<div class="b-nav-spacer"></div>
 		@yield('content')
+		<div class="b-bottomnav-spacer"></div>
 	</main>
 
 	<nav>
@@ -40,5 +46,11 @@
 	</nav>
     <!-- Include your App Component -->
     <!-- <App /> -->
+
+	<!-- Include the app.js file -->
+    <!-- <script src="{{ 'js/app.js' }}" defer></script> -->
+	<!-- // jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{{asset('js/betty.js')}}" defer></script>
   </body>
 </html>

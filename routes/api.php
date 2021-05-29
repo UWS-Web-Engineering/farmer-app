@@ -92,8 +92,8 @@ Route::prefix('mock')->group(function () {
 
         $updatedFarmer = array(
             "id"=> 2,
-            "userName"=> "atoosafarmer",
-            "password"=> "123123",
+            "userName"=> "atoosa",
+            "password"=> "123",
             "regionId"=> 17,
             "farmerEmail"=> "",
             "farmerName"=> "",
@@ -111,4 +111,22 @@ Route::prefix('mock')->group(function () {
 
         return response($updatedFarmer, 200);
     });
+    // POST /auth {userName, password}
+    // authenticates farmer
+    // RETURNS {farmerID, token}
+    Route::post('/auth', function (Request $request) {
+        $userName = $request->input("userName");
+        $password = $request->input("password");
+        if ($userName == "atoosa" && $password == "123") {
+            $auth = array(
+                "farmerID"=> 2,
+                "token"=> "53cr3tt0k3n"
+            );
+            return response($auth, 201);
+        } else {
+            return response("Invalid credentials!", 401);
+        }        
+    });
 });
+
+// Route::post('api/query/{query-id}/reply');
