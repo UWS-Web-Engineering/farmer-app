@@ -10,11 +10,11 @@
         <li class="pdf">
         <a href="/client">   
              <div class="client-container"> 
-             <a class>
-             {{ $client['name'] }} </a>
-             <b class>
+             <div class="a">
+             {{ $client['name'] }} </div>
+             <div class="b">
              {{ $client['weight'] }} 
-            </b class>
+            </div>
             </div>
         </a>
         </li>
