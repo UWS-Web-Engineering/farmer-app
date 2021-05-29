@@ -23,48 +23,26 @@
 @section('content')
 <div class="b-nav-spacer"></div>
 <div class="b-clients-container">
+<div class="p-row"> 
     @foreach($crops as $crops => $crop)
-        <a href="/client">
-            <div class="b-section">
-                <p class="b-heading b-heading-text">
-                    {{ $crop['cropName'] }}
-                </p>
-                <p class="b-heading b-heading-text">
-                    {{ $crop['weight'] }}
-                </p>
+    <div class="p-column">
+        <li class="pdf">
+        <a href="/clients">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
+             <div class="crop-details"> 
+             {{ $crop['cropName'] }} 
+            </div>
+            <div class="crop-description"> 
+             {{ $crop['weight'] }} 
             </div>
         </a>
+        </li>
+    </div>
     @endforeach
-@endsection
+</div>
 <div class="b-nav-spacer"></div>
-<script>
-// Get the elements with class="column"
-var elements = document.getElementsByClassName("column");
-// Declare a loop variable
-var i;
-
-// Two images side by side
-function two() {
-  for (i = 0; i < elements.length; i++) {
-    elements[i].style.msFlex = "50%";  // IE10
-    elements[i].style.flex = "50%";
-  }
-}
-
-// Add active class to the current button (highlight it)
-var header = document.getElementById("myHeader");
-var btns = header.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-
-</script>
-
 @endsection
+
 @section('bottomnav')
     @include('bottomnav');
 @endsection
