@@ -17,58 +17,36 @@
     <div class="b-msg-left">
         <div class="b-bubble">
             <div class="b-message">
-                {{ $query['query'] }}
+                {{ $query['officerMessage'] }}
             </div>
-            <div class="b-query-response b-btn b-btn-y" data-response="Y" data-queryid="{{$query['id']}}" id="checkbox-{{$query['id']}}">
+            <div class="b-query-response b-btn b-btn-y" data-response="Yes" data-queryid="{{$query['id']}}">
                 Yes
             </div>
-            <div class="b-btn b-btn-n">
+            <div class="b-query-response b-btn b-btn-n" data-response="No" data-queryid="{{$query['id']}}">
                 No
             </div>
-            <div class="b-btn b-btn-a">
+            <div class="b-query-response b-btn b-btn-a" data-response="Ask" data-queryid="{{$query['id']}}">
                 Ask Help
             </div>
-            <!-- <div class="checked-item checklist-item" id="item-{{$query['id']}}"> -->
-                
-            <!-- </div> -->
         </div>
         <div class="b-date">
         @php 
-            $timestamp = preg_replace( '/[^0-9]/', '', $query['queryDate']);
+            $timestamp = preg_replace( '/[^0-9]/', '', $query['createdAt']);
             $date = date("d M, h:i A", $timestamp / 1000);
             echo $date;
         @endphp
         </div>
     </div>
-    <div class="b-msg-right">
-        <!-- <div class="b-bubble">
-            <div class="b-message">
-                Yes
-            </div>
-        </div>
-        <div class="b-date">
-            10 APR, 7AM
-        </div> -->
-    </div>
-    <!-- <div class="b-msg-right">
-        <div class="b-bubble">
-            <div class="b-message">
-                Yes.
-            </div>
-        </div>
-        <div class="b-date">
-            10 APR, 7AM
-        </div>
-    </div>
+    <div class="b-msg-right"></div>
     <div class="b-msg-textbox">
-        <textarea name="" id="" placeholder="Write a message"></textarea>
-        <div class="b-btn b-btn-y">
+        <textarea name="" id="askHelp" placeholder="Write a message"></textarea>
+        <div class="b-btn b-btn-y b-ask-response" data-queryid="{{$query['id']}}">
             Send
         </div>
-    </div> -->
+    </div>
 </div>
 @endsection
 
 @section('bottomnav')
-	@include('bottomnav');
+	@include('bottomnav')
 @endsection

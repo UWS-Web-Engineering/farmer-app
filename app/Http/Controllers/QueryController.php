@@ -20,12 +20,12 @@ class QueryController extends Controller
         $response = http::get($url);
 
         $query = json_decode($response, true);
-        $title = $query['sender'];
+        $title = $query['clientName'];
 
         return view('query', compact('query', 'title'));
     }
 
-    function sendResponse(Request $request){
-        echo 'Response';
-    }
+    // function sendResponse(Request $request){
+    //     echo 'Response';
+    // }
 }

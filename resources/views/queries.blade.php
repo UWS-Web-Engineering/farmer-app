@@ -10,19 +10,19 @@
         @if($query['isRead']!=1)
             <a href="/query/{{ $query['id'] }}">
                 <div class="b-section">
-                    <p class="b-heading b-heading-text">
-                        {{ $query['sender'] }}
-                    </p>
+                    <div class="b-heading b-heading-text">
+                        {{ $query['clientName'] }}
+                    </div>
                     <h2 class="b-body b-body-text">
-                        {{ $query['query'] }}
+                        {{ $query['officerMessage'] }}
                     </h2>
-                    <p class="b-heading b-heading-text">
+                    <div class="b-heading b-heading-text">
                      @php 
-                        $timestamp = preg_replace( '/[^0-9]/', '', $query['queryDate']);
+                        $timestamp = preg_replace( '/[^0-9]/', '', $query['createdAt']);
                         $date = date("d M, h:i A", $timestamp / 1000);
                         echo $date;
                      @endphp
-                    </p>
+                    </div>
                 </div>
             </a>
         @endif
