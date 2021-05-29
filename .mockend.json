@@ -1,6 +1,6 @@
 {
     "Query": {
-      "queryID": "id",
+      "id": "id",
       "officerMessage": "string",
       "createdAt": "date",
       "farmerMessage": "string",
