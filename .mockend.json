@@ -30,6 +30,6 @@
       "fulfillDate":"date",
       "farmerResponse":"string",
       "updatedAt":"date",
-      "createdAt":""
+      "createdAt":"date"
     }
 }
