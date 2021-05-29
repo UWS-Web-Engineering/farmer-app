@@ -21,7 +21,6 @@
 @endsection
 
 @section('content')
-<div class="b-nav-spacer"></div>
 <div class="b-clients-container">
 <div class="p-row"> 
     @foreach($crops as $crops => $crop)
@@ -40,7 +39,6 @@
     </div>
     @endforeach
 </div>
-<div class="b-nav-spacer"></div>
 @endsection
 
 @section('bottomnav')

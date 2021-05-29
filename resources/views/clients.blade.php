@@ -5,7 +5,6 @@
 @endsection
 
 @section('content')
-<div class="b-nav-spacer"></div>
     @foreach($clients as $clients => $client)
         <li class="pdf">
         <a href="/client/{{ $client['id'] }}">   
@@ -20,7 +19,6 @@
         </li>
     @endforeach
 </div>
-<div class="b-nav-spacer"></div>
 @endsection
 
 @section('bottomnav')

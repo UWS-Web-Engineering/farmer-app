@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-
-<div class="b-nav-spacer"></div>
 <div class="p-row"> 
 @foreach($requests as $requests => $request)
     <div class="p-column">
@@ -17,7 +15,7 @@
              {{ $request['clientName'] }} 
             </div>
             <div class="request-client-description"> 
-             {{ $request['cropName'] }} 
+             {{ $request['contract'] }} 
 			</div>
 			<div class="request-client-weight"> 
              {{ $request['weight'] }} 
@@ -27,8 +25,6 @@
         </li>
     </div>
 	@endforeach
-<div class="b-nav-spacer"></div>
-
 @endsection
 
 @section('bottomnav')
