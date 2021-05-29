@@ -19,15 +19,18 @@
             <div class="b-message">
                 {{ $query['officerMessage'] }}
             </div>
-            <div class="b-query-response b-btn b-btn-y" data-response="Yes" data-queryid="{{$query['id']}}">
-                Yes
-            </div>
-            <div class="b-query-response b-btn b-btn-n" data-response="No" data-queryid="{{$query['id']}}">
-                No
-            </div>
-            <div class="b-query-response b-btn b-btn-a" data-response="Ask" data-queryid="{{$query['id']}}">
-                Ask Help
-            </div>
+
+            {{-- @if($query['farmerMessage']==null) --}}
+                <div class="b-query-response b-btn b-btn-y" data-response="Yes" data-queryid="{{$query['id']}}">
+                    Yes
+                </div>
+                <div class="b-query-response b-btn b-btn-n" data-response="No" data-queryid="{{$query['id']}}">
+                    No
+                </div>
+                <div class="b-query-response b-btn b-btn-a" data-response="Ask" data-queryid="{{$query['id']}}">
+                    Ask Help
+                </div>
+            {{-- @endif --}}
         </div>
         <div class="b-date">
         @php 
@@ -37,12 +40,29 @@
         @endphp
         </div>
     </div>
-    <div class="b-msg-right"></div>
     <div class="b-msg-textbox">
         <textarea name="" id="askHelp" placeholder="Write a message"></textarea>
         <div class="b-btn b-btn-y b-ask-response" data-queryid="{{$query['id']}}">
             Send
         </div>
+    </div>
+    <div class="b-msg-right">
+        @if($query['farmerMessage']==null)
+            <div>
+                <div class="b-bubble">
+                    <div class="b-message">
+                        {{ $query['farmerMessage'] }}
+                    </div>
+                </div>
+            </div>
+            <div class="b-date">
+                @php
+                    $timestamp = preg_replace( '/[^0-9]/', '', $query['updatedAt']);
+                    $date = date("d M, h:i A", $timestamp / 1000);
+                    echo $date;
+                @endphp
+            </div>
+        @endif
     </div>
 </div>
 @endsection

@@ -3,12 +3,14 @@ $(document).ready(function() {
     $(document).on('click', '.b-query-response', function() {
         var response = $(this).data('response');
         var query_id = $(this).data('queryid');
-        var url = 'api/'+query_id+'/reply';
+        var url = 'api/farmermessage';
         var answer = '';
         var object = {queryID: query_id, farmerMessage: response};
 
+        // Hide ask buttons once ask help submit button is clicked
         $('.b-query-response').hide();
 
+        // Set displays depending on response
         if (response == "Yes") {
             answer = '<div><div class="b-bubble"><div class="b-message">Yes</div></div></div>';
             console.log(object);
@@ -19,22 +21,21 @@ $(document).ready(function() {
             $('.b-msg-textbox').addClass('display');
         }
 
+        // Run ajax command if response is either yes or no
         if (response != "Ask") {
             $.ajax({
                 type:"POST",
                 url: url,
+                headers: {'Authorization':Cookies.get('token')},
                 data: {
-                    query: object,
-                    _token: "{{csrf_token()}}"
+                    query: object
                 },
                 success: function(data){
-        
+                    $('.b-msg-right').append(answer);
                 },
                 error: function(data){
-                    // Move this to success
-                    $('.b-msg-right').append(answer);
-                    // console.log('test');
-                    // $('.ajax-error').html('<div class="custom-alert">Error encountered. Please refresh the page.</div>').show().delay(2500).fadeOut(800);
+                    $('.b-msg-right').append(answer); // Delete this line once connected to backend
+                    console.log('Error');
                 }
             })
         }
@@ -46,27 +47,28 @@ $(document).ready(function() {
     $(document).on('click', '.b-ask-response', function() {
         var response = $('textarea#askHelp').val();
         var query_id = $(this).data('queryid');
-        var url = 'api/'+query_id+'/reply';
+        var url = 'api/farmermessage';
         var object = {queryID: query_id, farmerMessage: response};
         var answer = '<div><div class="b-bubble"><div class="b-message">'+response+'</div></div></div>';
         console.log(object);
+
+        // Hide textbox upon clicking submit
         $('.b-msg-textbox').removeClass('display');
 
+        // Send POST request
         $.ajax({
             type:"POST",
             url: url,
+            headers: {'Authorization':Cookies.get('token')},
             data: {
-                query: object,
-                _token: "{{csrf_token()}}"
+                query: object
             },
             success: function(data){
-    
+                $('.b-msg-right').append(answer);
             },
             error: function(data){
-                // Move this to success
-                $('.b-msg-right').append(answer);
-                // console.log('test');
-                // $('.ajax-error').html('<div class="custom-alert">Error encountered. Please refresh the page.</div>').show().delay(2500).fadeOut(800);
+                $('.b-msg-right').append(answer); // Delete this line once connected to backend
+                console.log('Error');
             }
         })
     })
