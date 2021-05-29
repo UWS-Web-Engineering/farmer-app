@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Response;
 use App\Http\Controllers\QueryController;
 use App\Http\Controllers\CropController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,9 @@ Route::get('/user', function () {
     return view('user');
 });
 
-Route::get('/requests', function () {
-    return view('requests', ['title' => 'New Requests']);
-});
+// Route::get('/requests', function () {
+//     return view('requests', ['title' => 'New Requests']);
+// });
 
 Route::view('/crops', 'crops/list');
 
@@ -36,9 +38,11 @@ Route::view('/settings', 'users/settings');
 
 Route::get('/queries', [QueryController::class,'getQueries']);
 
-Route::get('/clients', function () {
-    return view('clients', ['title' => 'Woolworths']);
-});
+Route::get('/clients', [ClientController::class,'getClients']);
+
+//Route::get('/clients', function () {
+ //   return view('clients', ['title' => 'Woolworths']);
+//});
 
 // Route::get('/query', function () {
 //     return view('query', ['title' => 'Query']);
@@ -52,4 +56,4 @@ Route::get('/client', function () {
 
 Route::get('/crops', [CropController::class,'getCrops']);
 
-
+Route::get('/requests', [RequestController::class,'getRequests']);
