@@ -58,10 +58,8 @@
 					// Set auth cookies
 					Cookies.set('farmerID', response.data.user.id);
 					Cookies.set('token', response.data.token);
-					// Extract new farmer ID
-					let farmerID = response.data.id;
 					// Redirect to /details and pass farmerID
-					window.location.replace(`details?farmerID=${farmerID}`);
+					window.location.replace('details');
 				} catch(e) {
 					alert(e.message);
 				} finally {
