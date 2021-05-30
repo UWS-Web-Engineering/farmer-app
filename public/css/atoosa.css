@@ -71,7 +71,7 @@ body {
     margin-top: var(--a-spacing--large);
 }
 .a-mt--xl {
-    margin-top: calc(var(--a-spacing--large)*2);
+    margin-top: var(--a-spacing--x-large);
 }
 .a-mb {
     margin-bottom: var(--a-spacing);
@@ -80,14 +80,14 @@ body {
     margin-bottom: var(--a-spacing--large);
 }
 .a-mb--xl {
-    margin-bottom: calc(var(--a-spacing--large)*2);
+    margin-bottom: var(--a-spacing--x-large);
 }
 .a-ml-auto {
     margin-left: auto;
 }
 /* Container */
 .a-container {
-    padding: calc(var(--a-spacing--large)*2);
+    padding: var(--a-spacing--large) var(--a-spacing--x-large);
     min-height: 100vh;
     box-sizing: border-box;
 }

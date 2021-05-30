@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('content')
-	<form name="detailsForm" class="a-container a-flex a-flex-column a-justify-content-center">
+	<form name="detailsForm" class="a-container a-flex a-flex-column">
 	<svg  class="a-align-self-center" width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.25 21.375H0C0 48.9176 22.3324
  71.25 49.875 71.25V103.312C49.875 105.272 
@@ -15,26 +15,19 @@
 </svg>
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
 		{{ csrf_field() }}
-		<input type="email" name="farmerEmail" required placeholder="Email Address" class="a-text-field a-mb" />
-		<input type="text" name="farmerName" required placeholder="Name" class="a-text-field a-mb" />
-    	<input type="phone" name="farmerPhone" required placeholder="Phone Number" class="a-text-field a-mb" />
-    	<input type="text" name="farmerAddr" required placeholder="Address" class="a-text-field a-mb" />
-		<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
+		<input type="email" name="email" required placeholder="Email Address" class="a-text-field a-mb" />
+		<input type="text" name="name" required placeholder="Name" class="a-text-field a-mb" />
+    	<input type="phone" name="phone" required placeholder="Phone Number" class="a-text-field a-mb" />
+    	<input type="text" name="addr" required placeholder="Address" class="a-text-field a-mb" />
+		<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-align-self-end" />
 	</form>
 	
 	<script>
-		// Read farmerID from URL
-		const urlParams = new URLSearchParams(window.location.search);
-		const farmerID = urlParams.get('farmerID');
 		// Define form variable
 		let form = document.forms['detailsForm'];
 		// Call submit function on form submission
 		form.addEventListener("submit", submit);
 		async function submit(e) {
-			if (!farmerID) {
-				alert("No farmer defined to the details for!")
-				return void(0);
-			}
 			// Prevent default form submission
 			e.preventDefault();
 
@@ -47,10 +40,7 @@
 					// Create from data from form
 					const farmer = new FormData(form);
 					// Send PATCH request to /farmers/id
-					const response = await axios.post(
-						`/api/mock/farmers/${farmerID}`,
-						farmer,
-						{ params: { _method: 'PATCH' } });
+					const response = await axios.post('https://farm-service.include.ninja/api/addfarmer', farmer);
 					// Redirect to /crops
 					window.location.replace('/crops');
 				} catch(e) {

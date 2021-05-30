@@ -6,6 +6,7 @@ use App\Http\Controllers\QueryController;
 use App\Http\Controllers\CropController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,13 +29,13 @@ Route::get('/user', function () {
 
 Route::view('/crops', 'crops/list');
 
-Route::view('/register', 'users/register');
+Route::get('/register', [UserController::class, 'renderRegister']);
 
-Route::view('/', 'users/login');
+Route::get('/', [UserController::class, 'renderLogin']);
 
-Route::view('/details', 'users/details');
+Route::get('/details', [UserController::class, 'renderDetails']);
 
-Route::view('/settings', 'users/settings');
+Route::get('/settings', [UserController::class, 'renderSettings']);
 
 Route::get('/queries', [QueryController::class,'getQueries']);
 

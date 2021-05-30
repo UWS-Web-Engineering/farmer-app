@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('content')
-	<form name="loginForm" class="a-container a-flex a-flex-column a-justify-content-center">
+	<form name="loginForm" class="a-container a-flex a-flex-column">
 	<svg  class="a-align-self-center" width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.25 21.375H0C0 48.9176 22.3324
  71.25 49.875 71.25V103.312C49.875 105.272 
@@ -17,7 +17,7 @@
 		{{ csrf_field() }}
 		<input type="text" name="username" placeholder="Username" required class="a-text-field a-mb" />
 		<input type="password" name="password" placeholder="Password" required class="a-text-field a-mb" />
-		<input type="submit" name="submitBtn" value="LOG IN" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
+		<input type="submit" name="submitBtn" value="LOG IN" class="a-btn a-ml-auto a-mt a-mb--lg a-align-self-end" />
 		<a href="/register" class="a-link a-text-light a-align-self-center a-mt--xl">Don't have an account? <span class="a-primary--text a-text-bold">Register</span></a>
 	</form>
 
