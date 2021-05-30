@@ -17,17 +17,17 @@
       "clientId":"number",
       "name":"string",
       "weight":"string",
-      "date":"date",
-      "contract":"string",
-      "down":"string"
+      "dateAgreed":"date",
+      "contractPrice":"string",
+      "downPayment":"string"
     },
     "Request": {
       "id":"number",
       "clientName":"string",
       "weight":"string",
       "cropName":"string",
-      "price":"string",
-      "fulfillDate":"date",
+      "contractPrice":"string",
+      "dateAgreed":"date",
       "farmerResponse":"string",
       "updatedAt":"date",
       "createdAt":"date"
