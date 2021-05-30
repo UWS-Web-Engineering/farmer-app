@@ -40,7 +40,7 @@
 					// Create from data from form
 					const farmer = new FormData(form);
 					// Send PATCH request to /farmers/id
-					const response = await axios.post('https://farmservice.include.ninja/api/addfarmer', farmer);
+					const response = await axios.post('https://farm-service.include.ninja/api/addfarmer', farmer);
 					// Redirect to /crops
 					window.location.replace('/crops');
 				} catch(e) {
