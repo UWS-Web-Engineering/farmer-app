@@ -3,9 +3,9 @@ $(document).ready(function() {
     $(document).on('click', '.b-query-response', function() {
         var response = $(this).data('response');
         var query_id = $(this).data('queryid');
-        var url = 'api/farmermessage';
+        var url = 'https://officermanager.include.ninja/api/sendmessage';
         var answer = '';
-        var object = {queryID: query_id, farmerMessage: response};
+        var object = {id: query_id, farmermessage: response};
 
         // Hide ask buttons once ask help submit button is clicked
         $('.b-query-response').hide();
@@ -23,13 +23,30 @@ $(document).ready(function() {
 
         // Run ajax command if response is either yes or no
         if (response != "Ask") {
+            // $.ajax({
+            //     type:"PUT",
+            //     url: url,
+            //     headers: {'Authorization':Cookies.get('token')},
+            //     data: {
+            //         query: object
+            //     },
+            //     success: function(data){
+            //         $('.b-msg-right').append(answer);
+            //     },
+            //     error: function(data){
+            //         $('.b-msg-right').append(answer); // Delete this line once connected to backend
+            //         console.log('Error');
+            //     }
+            // })
             $.ajax({
-                type:"POST",
                 url: url,
-                headers: {'Authorization':Cookies.get('token')},
-                data: {
-                    query: object
+                type: 'PUT',
+                data: JSON.stringify(object),
+                headers: {
+                    'x-auth-token': Cookies.get('token'),
+                    "Content-Type": "application/json"
                 },
+                dataType: 'json',
                 success: function(data){
                     $('.b-msg-right').append(answer);
                 },
@@ -47,22 +64,24 @@ $(document).ready(function() {
     $(document).on('click', '.b-ask-response', function() {
         var response = $('textarea#askHelp').val();
         var query_id = $(this).data('queryid');
-        var url = 'api/farmermessage';
-        var object = {queryID: query_id, farmerMessage: response};
+        var url = 'https://officermanager.include.ninja/api/sendmessage';
+        var object = {id: query_id, farmermessage: response};
         var answer = '<div><div class="b-bubble"><div class="b-message">'+response+'</div></div></div>';
         console.log(object);
 
         // Hide textbox upon clicking submit
         $('.b-msg-textbox').removeClass('display');
 
-        // Send POST request
+        // Send PUT request
         $.ajax({
-            type:"POST",
             url: url,
-            headers: {'Authorization':Cookies.get('token')},
-            data: {
-                query: object
+            type: 'PUT',
+            data: JSON.stringify(object),
+            headers: {
+                'x-auth-token': Cookies.get('token'),
+                "Content-Type": "application/json"
             },
+            dataType: 'json',
             success: function(data){
                 $('.b-msg-right').append(answer);
             },
