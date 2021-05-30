@@ -21,7 +21,6 @@
 @endsection
 
 @section('content')
-<div class="b-nav-spacer"></div>
 <ul class="a-list">
 	<li>
 		<button id="logoutBtn">Log Out</button>
