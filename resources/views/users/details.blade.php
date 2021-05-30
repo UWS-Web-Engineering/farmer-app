@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section('content')
-	<form name="detailsForm" class="a-container a-flex a-flex-column a-justify-content-center">
+	<form name="detailsForm" class="a-container a-flex a-flex-column">
 	<svg  class="a-align-self-center" width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.25 21.375H0C0 48.9176 22.3324
  71.25 49.875 71.25V103.312C49.875 105.272 
@@ -19,7 +19,7 @@
 		<input type="text" name="name" required placeholder="Name" class="a-text-field a-mb" />
     	<input type="phone" name="phone" required placeholder="Phone Number" class="a-text-field a-mb" />
     	<input type="text" name="addr" required placeholder="Address" class="a-text-field a-mb" />
-		<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-mb--xl a-align-self-end" />
+		<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-align-self-end" />
 	</form>
 	
 	<script>
