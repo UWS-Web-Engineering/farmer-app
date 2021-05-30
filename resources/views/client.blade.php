@@ -29,7 +29,7 @@
                     </div>
                     <div class="b-detail b-body">
                         @php 
-                            $timestamp = preg_replace( '/[^0-9]/', '', $client['date']);
+                            $timestamp = preg_replace( '/[^0-9]/', '', $client['dateAgreed']);
                             $date = date("d M Y", $timestamp / 1000);
                             echo $date;
                         @endphp
@@ -51,7 +51,7 @@
                         Contract Price
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['contract'] }}
+                        {{ $client['contractPrice'] }}
                     </div>
                 </div>
                 
@@ -60,7 +60,7 @@
                         Down Payment
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['down'] }}
+                        {{ $client['downPayment'] }}
                     </div>
                 </div>
             </div>

@@ -3,9 +3,9 @@ $(document).ready(function() {
     $(document).on('click', '.b-query-response', function() {
         var response = $(this).data('response');
         var query_id = $(this).data('queryid');
-        var url = 'api/farmermessage';
+        var url = 'api/sendmessage';
         var answer = '';
-        var object = {queryID: query_id, farmerMessage: response};
+        var object = {id: query_id, farmermessage: response};
 
         // Hide ask buttons once ask help submit button is clicked
         $('.b-query-response').hide();
@@ -47,8 +47,8 @@ $(document).ready(function() {
     $(document).on('click', '.b-ask-response', function() {
         var response = $('textarea#askHelp').val();
         var query_id = $(this).data('queryid');
-        var url = 'api/farmermessage';
-        var object = {queryID: query_id, farmerMessage: response};
+        var url = 'api/sendmessage';
+        var object = {id: query_id, farmermessage: response};
         var answer = '<div><div class="b-bubble"><div class="b-message">'+response+'</div></div></div>';
         console.log(object);
 
