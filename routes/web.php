@@ -41,6 +41,8 @@ Route::get('/queries', [QueryController::class,'getQueries']);
 
 Route::get('/clients', [ClientController::class,'getClients']);
 
+Route::get('/officers', [OfficerController::class,'getOfficers']);
+
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
 
 Route::get('/client/{client_id}', [ClientController::class,'getClient']);
