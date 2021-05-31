@@ -9,10 +9,16 @@ use Cookies;
 class ClientController extends Controller
 {
     function getClients(){
+        // https://officermanager.include.ninja/api/get_all_crops_farmers/3
+        // https://officermanager.include.ninja/api/get_all_crops_farmers/3
+        
+        $id = $_COOKIE['farmerID'];
+        $url = "https://mockend.com/UWS-Web-Engineering/farmer-app/clients?limit=" . $id;
+
         $response = Http::withHeaders([
             'Authorization' => $_COOKIE['token']
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/clients?limit=10');
-
+        ])->get($url);
+      
         $clients = json_decode($response, true);
         $title = 'Clients';
 

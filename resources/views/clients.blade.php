@@ -19,6 +19,7 @@
         </li>
     @endforeach
 </div>
+
 @endsection
 
 @section('bottomnav')
