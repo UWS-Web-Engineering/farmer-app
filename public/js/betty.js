@@ -173,3 +173,10 @@ $(document).ready(function() {
         })
     })
 });
+
+// Get Clients
+// $(document).ready(function() {
+//     $(document).on('click', '.get-clients', function() {
+//         console.log('get clients')
+//     })
+// });
