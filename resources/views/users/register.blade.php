@@ -16,56 +16,58 @@
 
 		<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
 		{{ csrf_field() }}
-		<input type="text" name="username" placeholder="Username" required class="a-text-field a-mb" />
+		<input type="text" name="username" placeholder="Username" required class="a-text-field a-mb username-field" />
 		<input type="hidden" name="userRole" value="Farmer" />
 		<input type="text" name="password" placeholder="Password" required class="a-text-field a-mb" />
 		<input type="text" name="password_confirmation" placeholder="Confirm Password" required class="a-text-field a-mb" />
 		<!-- <input type="number" name="regionId" placeholder="Region ID" required class="a-text-field a-mb" /> -->
-		<input type="submit" name="submitBtn" value="Register" class="a-btn a-ml-auto a-mt a-mb--lg a-align-self-end" />
+		<input type="submit" name="submitBtn" value="Register" class="a-btn a-ml-auto a-mt a-mb--lg a-align-self-end reg-btn" />
 		<a href="/login" class="a-link a-text-light a-align-self-center a-mt--xl">Already have an account? <span class="a-primary--text a-text-bold">Log in</span></a>
 	</form>
 
 	<script>
 		// Define form variable
-		let form = document.forms['registerForm'];
-		// Call register function on form submission
-		form.addEventListener("submit", register);
-		// Reset validity of password confirmation on change
-		form.password_confirmation.addEventListener("change", function() {
-			form.password_confirmation.setCustomValidity("");
-		})
-		async function register(e) {
-			// Prevent default form submission
-			e.preventDefault();
-			
-			// Check if password confirmation matches
-			if (form.password.value != form.password_confirmation.value) {
-				form.password_confirmation.setCustomValidity("Doesn't match with above!");
-			}
+        let form = document.forms['registerForm'];
+        // Call register function on form submission
+        form.addEventListener("submit", register);
+        // Reset validity of password confirmation on change
+        form.password_confirmation.addEventListener("change", function() {
+            form.password_confirmation.setCustomValidity("");
+        })
 
-			// Check if the form is valid
-			if (form.checkValidity()) {
-				// Disable submit button
-				form.submitBtn.disabled = true;
-				form.submitBtn.value = "Please wait...";
-				try {
-					// Create from data from form
-					const farmer = new FormData(form);
-					// Send POST request to backend
-					const response = await axios.post('https://usercontroller.include.ninja/api/signup', farmer);
-					// Set auth cookies
-					Cookies.set('farmerID', response.data.user.id);
-					Cookies.set('token', response.data.token);
+        async function register(e) {
+            //Prevent default form submission
+            e.preventDefault();
+            
+            // Check if password confirmation matches
+            if (form.password.value != form.password_confirmation.value) {
+                form.password_confirmation.setCustomValidity("Doesn't match with above!");
+            }
+
+            // Check if the form is valid
+            if (form.checkValidity()) {
+                // Disable submit button
+                form.submitBtn.disabled = true;
+                form.submitBtn.value = "Please wait...";
+                try {
+                    // Create from data from form
+                    const farmer = new FormData(form);
+                    // Send POST request to backend
+                    const response = await axios.post('https://usercontroller.include.ninja/api/signup', farmer);
+                    // Set auth cookies
+                    Cookies.set('farmerID', response.data.user.id);
+                    Cookies.set('token', response.data.token);
 					// Redirect to /details and pass farmerID
-					window.location.replace('details');
-				} catch(e) {
-					alert(e.message);
-				} finally {
-					// Enable submit button
-					form.submitBtn.value = "Register"
-					form.submitBtn.disabled = false
-				}
-			}
-		}
+                    window.location.replace('details/'+document.getElementsByClassName('a-text-field a-mb username-field')[0].value);
+                } catch(e) {
+                    alert(e.message);
+                } finally {
+                    // Enable submit button
+                    form.submitBtn.value = "Register"
+                    form.submitBtn.disabled = false
+                }
+            }
+        }
+
 	</script>
 @endsection
