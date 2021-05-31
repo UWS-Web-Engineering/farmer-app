@@ -11,7 +11,8 @@ class CropController extends Controller
     function getCrops(){
         $response = Http::withHeaders([
             'Authorization' => $_COOKIE['token']
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/crops?limit=10');
+        ])->get('https://officermanager.include.ninja/api/get_all_crops_farmers/3');
+
         $crops = json_decode($response, true);
         $title = 'Crops';
 
