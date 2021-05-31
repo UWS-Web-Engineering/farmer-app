@@ -7,12 +7,12 @@
 @section('content')
     @foreach($clients as $clients => $client)
         <li class="pdf">
-        <a href="/client/{{ $client['id'] }}">   
+        <a href="/officers/{{ $client['id'] }}">   
              <div class="client-container"> 
              <div class="a">
-             {{ $client['name'] }} </div>
+             {{ $client['companyname'] }} </div>
              <div class="b">
-             {{ $client['weight'] }} 
+             {{ $client['cropqty'] }}kg 
             </div>
             </div>
         </a>

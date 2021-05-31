@@ -27,12 +27,12 @@
     <div class="p-column">
         <li class="pdf">
 		<a href="/clients">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Carrots.JPG">    
+			<img src={{ $crop['cropimg'] }}>      
              <div class="crop-details"> 
-             {{ $crop['cropName'] }} 
+             {{ $crop['cropname'] }} 
             </div>
             <div class="crop-description"> 
-             {{ $crop['weight'] }} 
+             {{ $crop['cropqty'] }}kg
             </div>
         </a>
         </li>
