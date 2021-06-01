@@ -19,7 +19,7 @@
         
         <!-- Hello -->
         <div class="b-cropname">
-            {{ $client['name'] }}
+            {{ $client['cropname'] }}
         </div>
         <div class="b-client-details-container">
             <div class="b-left-col">
@@ -28,11 +28,13 @@
                         Fulfill By
                     </div>
                     <div class="b-detail b-body">
-                        @php 
+                    https://gateway.include.ninja/api/officer-manager/get_all_dets
+                        $client['expecteddate']
+                        <!-- @php 
                             $timestamp = preg_replace( '/[^0-9]/', '', $client['dateAgreed']);
                             $date = date("d M Y", $timestamp / 1000);
                             echo $date;
-                        @endphp
+                        @endphp -->
                     </div>
                 </div>
                 
@@ -41,7 +43,7 @@
                         Qty
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['weight'] }}
+                        {{ $client['cropqty'] }} KG
                     </div>
                 </div>
             </div>
@@ -51,7 +53,7 @@
                         Contract Price
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['contractPrice'] }}
+                        {{ $client['cropprice'] }}
                     </div>
                 </div>
                 
@@ -60,7 +62,7 @@
                         Down Payment
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['downPayment'] }}
+                        {{ $client['cropqty'] }}
                     </div>
                 </div>
             </div>
