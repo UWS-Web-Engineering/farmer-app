@@ -22,7 +22,8 @@
       "downpayment":"string",
       "officername":"string",
       "cropname":"string",
-         "expecteddate":"date"
+      "expecteddate":"date",
+      "croptqty":"int"
     },
     "Request": {
       "id":"number",
