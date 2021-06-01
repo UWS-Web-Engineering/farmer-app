@@ -13,8 +13,8 @@ class ClientController extends Controller
         $id = $_COOKIE['farmerID'];
         
         $response = Http::withHeaders([
-            'Authorization' => $_COOKIE['token']
-        ])->get('https://officermanager.include.ninja/api/get_managers_for_farmers', [
+            'Authorization' => 'Bearer ' + $_COOKIE['token']
+        ])->get('https://gateway.include.ninja/api/officer-manager/get_managers_for_farmers', [
             'cropid' => '4',
             'farmerid' => '2',
         ]); 
