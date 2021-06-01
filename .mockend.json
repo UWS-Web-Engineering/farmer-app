@@ -1,46 +1,46 @@
 {
     "Query": {
-      "id": "id",
-      "officerMessage": "string",
-      "createdAt": "date",
-      "farmerMessage": "string",
-      "updatedAt": "date",
-      "isRead": "boolean",
-      "clientName": "string"
+      "queryid": "id",
+      "officermessage": "string",
+      "createdat": "date",
+      "farmermessage": "string",
+      "updatedat": "date",
+      "isread": "boolean",
+      "clientname": "string"
     },
     "Crop": {
-      "cropName":"string",
-      "imageUri":"string",
+      "cropname":"string",
+      "imageuri":"string",
       "weight":"string"
     },
      "Client": {
-      "clientId":"number",
+      "clientid":"number",
       "name":"string",
       "weight":"string",
-      "dateAgreed":"date",
-      "contractPrice":"string",
-      "downPayment":"string"
+      "dateagreed":"date",
+      "contractprice":"string",
+      "downpayment":"string"
     },
     "Request": {
       "id":"number",
-      "clientName":"string",
+      "clientname":"string",
       "weight":"string",
-      "cropName":"string",
-      "contractPrice":"string",
-      "dateAgreed":"date",
-      "farmerResponse":"string",
-      "updatedAt":"date",
-      "createdAt":"date"
+      "cropname":"string",
+      "contractprice":"string",
+      "dateagreed":"date",
+      "farmerresponse":"string",
+      "updatedat":"date",
+      "createdat":"date"
     },
     "Negotiation": {
       "id":"number",
-      "clientName":"string",
+      "clientname":"string",
       "weight":"string",
-      "cropName":"string",
-      "contractPrice":"string",
-      "dateAgreed":"date",
-      "farmerResponse":"string",
-      "updatedAt":"date",
-      "createdAt":"date"
+      "cropname":"string",
+      "contractprice":"string",
+      "dateagreed":"date",
+      "farmerresponse":"string",
+      "updatedat":"date",
+      "createdat":"date"
     }
 }
