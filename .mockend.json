@@ -19,7 +19,8 @@
       "weight":"string",
       "dateagreed":"date",
       "contractprice":"string",
-      "downpayment":"string"
+      "downpayment":"string",
+      "officername":"string"
     },
     "Request": {
       "id":"number",
