@@ -34,7 +34,7 @@ Route::get('/register', [UserController::class, 'renderRegister']);
 
 Route::get('/', [UserController::class, 'renderLogin']);
 
-Route::get('/details/{username}', [UserController::class, 'renderDetails']);
+Route::get('/details/{userid}', [UserController::class, 'renderDetails']);
 
 Route::get('/settings', [UserController::class, 'renderSettings']);
 

@@ -15,7 +15,7 @@
 		</svg>
 				<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
 				{{ csrf_field() }}
-				<input type="hidden" name="usercontrollerid" value={{ $username }} />
+				<input type="hidden" name="usercontrollerid" value={{ $userid }} />
 				<input type="email" name="farmeremail" required placeholder="Email" class="a-text-field a-mb" />
 				<input type="text" name="farmername" required placeholder="Name" class="a-text-field a-mb" />
 				<input type="phone" name="farmerphone" required placeholder="Phone Number" class="a-text-field a-mb" />
@@ -30,10 +30,14 @@
 					<option value="act">ACT</option>
 					<option value="north territory">North Territory</option>
 				</select>
-				<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-align-self-end" />
+				<input onclick="myFunction()" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-align-self-center" />
 			</form>
 		
 		<script>
+		function myFunction() {
+			window.location.replace('/crops');
+		}			
+		/** commented as backend is not ready for adding of farmner api
 			// Define form variable
 			let form = document.forms['detailsForm'];
 			// Call submit function on form submission
@@ -65,5 +69,6 @@
 					}
 				}
 			}
+		*/
 		</script>
 	@endsection
