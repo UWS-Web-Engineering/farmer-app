@@ -21,7 +21,8 @@
       "contractprice":"string",
       "downpayment":"string",
       "officername":"string",
-      "cropname":"string"
+      "cropname":"string",
+         "expecteddate":"date"
     },
     "Request": {
       "id":"number",
