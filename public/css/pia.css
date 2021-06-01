@@ -42,8 +42,8 @@ margin: 20px 0;
 height: 100%;
 width: 100%;
 position: absolute;
-border-radius: 10px;
-opacity: .50;
+border-radius: 5px;
+
 }
 
 li.pdf a {
@@ -53,8 +53,9 @@ li.pdf a {
 
 .crop-details
 {
-height: 50px;
+height: 40px;
 width: 100px;
+font-size: 16px;
 position: absolute;
 top: 50%;
 left: 50%;
@@ -122,7 +123,6 @@ font-size: 20px;
     width: 100%;
     position: absolute;
     border-radius: 5px;
-    background-color: #D1D3D1;
 }
 
 .request-client-name

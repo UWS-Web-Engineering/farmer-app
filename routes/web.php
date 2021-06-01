@@ -33,13 +33,15 @@ Route::get('/register', [UserController::class, 'renderRegister']);
 
 Route::get('/', [UserController::class, 'renderLogin']);
 
-Route::get('/details', [UserController::class, 'renderDetails']);
+Route::get('/details/{username}', [UserController::class, 'renderDetails']);
 
 Route::get('/settings', [UserController::class, 'renderSettings']);
 
 Route::get('/queries', [QueryController::class,'getQueries']);
 
 Route::get('/clients', [ClientController::class,'getClients']);
+
+Route::get('/officers', [OfficerController::class,'getOfficers']);
 
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
 

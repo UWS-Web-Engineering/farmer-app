@@ -42,10 +42,9 @@
 					// Send POST request to auth endpoint
 					const response = await axios.post('https://usercontroller.include.ninja/api/login', farmer);
 					// Set auth cookies
-					Cookies.set('farmerID', response.data.user.id);
 					Cookies.set('token', response.data.token);
 					// Redirect to /crops
-					window.location.replace('/crops');
+					getFarmerId(response.data.user.id);
 				} catch(e) {
 					alert(e.message);
 				} finally {
@@ -55,5 +54,24 @@
 				}
 			}
 		}
+		//todo update url from hyejin get farmer/id api
+		function getFarmerId(id){
+			try {
+					const response = axios.get('https://officermanager.include.ninja/all/get_all_crops_farmers/3');
+					//uncomment if get farmer api is already available
+					// const response = axios.get('https://officermanager.include.ninja/all/get_all_crops_farmers/' + document.getElementsByClassName('a-text-field a-mb')[0].value);
+					// Cookies.set('farmerID', response.data.user.id); //todo check other way to store id
+					// Set auth cookies
+					// Redirect to /crops
+					window.location.replace('/crops');
+				} catch(e) {
+					alert(e.message);
+				} finally {
+					// Enable submit button
+					form.submitBtn.value = "LOG IN"
+					form.submitBtn.disabled = false
+				}
+		}
+
 	</script>
 @endsection
