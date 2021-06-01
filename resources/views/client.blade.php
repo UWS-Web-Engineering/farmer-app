@@ -14,7 +14,7 @@
             </span>
         </a>
     </div>
-    <a href="/query/{{ $client['id'] }}">
+    <a href="/query/{{ $officerid }}">
     </a>
         
         <!-- Hello -->
@@ -28,7 +28,7 @@
                         Fulfill By
                     </div>
                     <div class="b-detail b-body">
-                    https://gateway.include.ninja/api/officer-manager/get_all_dets
+                        <!-- https://gateway.include.ninja/api/officer-manager/get_all_dets -->
                         $client['expecteddate']
                         <!-- @php 
                             $timestamp = preg_replace( '/[^0-9]/', '', $client['dateAgreed']);
@@ -75,7 +75,7 @@
         <a href="/query/{{ $query['id'] }}">
             <div class="b-section">
                 <h2 class="b-body b-body-text b-read">
-                    {{ $query['officerMessage'] }}
+                    {{ $query['officermessage'] }}
                 </h2>
             </div>
         </a>
@@ -83,7 +83,7 @@
         <a href="/query/{{ $query['id'] }}">
             <div class="b-section">
                 <h2 class="b-body b-body-text">
-                    {{ $query['officerMessage'] }}
+                    {{ $query['officermessage'] }}
                 </h2>
             </div>
         </a>

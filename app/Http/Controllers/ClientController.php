@@ -25,31 +25,33 @@ class ClientController extends Controller
         return view('clients', compact('clients', 'title'));
     }
 
-    function getClient($id){
+    function getClient($officerid){
 
-        $id = 'Bearer '.$_COOKIE['token'];
+        $token = 'Bearer '.$_COOKIE['token'];
+        $farmerid = 'Bearer '.$_COOKIE['farmerId'];
+        $officerid = 2;
 
         // Client Info
         $response = Http::withHeaders([
-            'Authorization' => $id 
+            'Authorization' => $token
         ])->get('https://gateway.include.ninja/api/officer-manager/get_all_dets', [
-            'officerid' => '2',
-            'farmerid' => '3',
+            'officerid' => $officerid,
+            'farmerid' => $farmerid,
         ]); 
 
         $client = json_decode($response, true);
-        $title = $client['name'];
+        $title = 'Client';
 
         // Queries
         $response_q = Http::withHeaders([
-            'Authorization' => $id 
+            'Authorization' => $token
         ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries_by_officer', [
-            'officerid' => '2',
-            'farmerid' => '3',
+            'officerid' => $officerid,
+            'farmerid' => $farmerid,
         ]);
 
         $queries = json_decode($response_q, true);
 
-        return view('client', compact('client', 'queries', 'title'));
+        return view('client', compact('client', 'queries', 'title', 'officerid'));
     }
 }

@@ -24,21 +24,6 @@ $(document).ready(function() {
 
         // Run ajax command if response is either yes or no
         if (response != "Ask") {
-            // $.ajax({
-            //     type:"PUT",
-            //     url: url,
-            //     headers: {'Authorization':Cookies.get('token')},
-            //     data: {
-            //         query: object
-            //     },
-            //     success: function(data){
-            //         $('.b-msg-right').append(answer);
-            //     },
-            //     error: function(data){
-            //         $('.b-msg-right').append(answer); // Delete this line once connected to backend
-            //         console.log('Error');
-            //     }
-            // })
             $.ajax({
                 url: url,
                 type: 'PUT',
@@ -53,7 +38,8 @@ $(document).ready(function() {
                 },
                 error: function(data){
                     $('.b-msg-right').append(answer); // Delete this line once connected to backend
-                    alert('Your request cannot be processed right now.');
+                    console.log('This is just a dummy POST. It is not connected to the backend.');
+                    // alert('Your request cannot be processed right now.');
                 }
             })
         }
@@ -89,7 +75,8 @@ $(document).ready(function() {
             },
             error: function(data){
                 $('.b-msg-right').append(answer); // Delete this line once connected to backend
-                alert('Your request cannot be processed right now.');
+                console.log('This is just a dummy POST. It is not connected to the backend.');
+                // alert('Your request cannot be processed right now.');
             }
         })
     })
@@ -137,7 +124,8 @@ $(document).ready(function() {
                 },
                 error: function(data){
                     $('.b-msg-right').append(answer); // Delete this line once connected to backend
-                    alert('Your request cannot be processed right now.');
+                    console.log('This is just a dummy POST. It is not connected to the backend.');
+                    // alert('Your request cannot be processed right now.');
                 }
             })
         }
@@ -178,8 +166,12 @@ $(document).ready(function() {
             },
             error: function(data){
                 $('.b-msg-right').append(answer); // Delete this line once connected to backend
-                alert('Your request cannot be processed right now.');
+                console.log('This is just a dummy POST. It is not connected to the backend.');
+                // alert('Your request cannot be processed right now.');
             }
         })
     })
 });
+
+// Create Negotiation POST similar to Request POST once API endpoint is ready. Right now, both Request and Negotiations
+// share the same AJAX call

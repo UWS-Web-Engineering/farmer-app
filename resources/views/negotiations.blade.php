@@ -9,7 +9,7 @@
 @foreach($requests as $requests => $request)
     <div class="p-column">
         <li class="pdf">
-		<a href="/request/{{ $request['id'] }}"> 
+		<a href="/negotiation/{{ $request['id'] }}"> 
 		<bg> 
              <div class="request-client-name"> 
              {{ $request['clientname'] }} 
