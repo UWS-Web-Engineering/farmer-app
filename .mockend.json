@@ -31,5 +31,16 @@
       "farmerResponse":"string",
       "updatedAt":"date",
       "createdAt":"date"
+    },
+    "Negotiation": {
+      "id":"number",
+      "clientName":"string",
+      "weight":"string",
+      "cropName":"string",
+      "contractPrice":"string",
+      "dateAgreed":"date",
+      "farmerResponse":"string",
+      "updatedAt":"date",
+      "createdAt":"date"
     }
 }
