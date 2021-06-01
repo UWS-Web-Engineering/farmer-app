@@ -42,7 +42,7 @@
 					// Send POST request to auth endpoint
 					const response = await axios.post('https://usercontroller.include.ninja/api/login', farmer);
 					// Set auth cookies
-					Cookies.set('token', response.data.token);
+					Cookies.set('Authorization', "Bearer " + response.data.token);
 					// Redirect to /crops
 					getFarmerId(response.data.user.id);
 				} catch(e) {
