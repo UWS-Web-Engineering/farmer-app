@@ -23,7 +23,8 @@
       "officername":"string",
       "cropname":"string",
       "expecteddate":"date",
-      "cropqty":"int"
+      "cropqty":"int",
+      "cropprice":"int"
     },
     "Request": {
       "id":"number",
