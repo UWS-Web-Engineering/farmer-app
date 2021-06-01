@@ -27,16 +27,26 @@ class ClientController extends Controller
 
     function getClient($id){
 
+        $id = 'Bearer '.$_COOKIE['token'];
+
         // Client Info
-        $url = "https://mockend.com/UWS-Web-Engineering/farmer-app/clients/" . $id;
-        $response = http::get($url);
+        $response = Http::withHeaders([
+            'Authorization' => $id 
+        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_dets', [
+            'officerid' => '2',
+            'farmerid' => '3',
+        ]); 
 
         $client = json_decode($response, true);
         $title = $client['name'];
 
         // Queries
-        $url_q = "https://mockend.com/UWS-Web-Engineering/farmer-app/queries?limit=10";
-        $response_q = http::get($url_q);
+        $response_q = Http::withHeaders([
+            'Authorization' => $id 
+        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries_by_officer', [
+            'officerid' => '2',
+            'farmerid' => '3',
+        ]);
 
         $queries = json_decode($response_q, true);
 
