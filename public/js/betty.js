@@ -6,6 +6,7 @@ $(document).ready(function() {
         var url = 'https://officermanager.include.ninja/api/sendmessage';
         var answer = '';
         var object = {id: query_id, farmermessage: response};
+        var token = 'Bearer ' + Cookies.get('token');
 
         // Hide ask buttons once ask help submit button is clicked
         $('.b-query-response').hide();
@@ -43,13 +44,10 @@ $(document).ready(function() {
                 type: 'PUT',
                 data: JSON.stringify(object),
                 headers: {
-                    'x-auth-token': Cookies.get('token'),
+                    'Authorization': token,
                     "Content-Type": "application/json"
                 },
                 dataType: 'json',
-                xhrFields: {
-                    withCredentials: true
-                },
                 success: function(data){
                     $('.b-msg-right').append(answer);
                 },
