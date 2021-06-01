@@ -10,7 +10,7 @@
     },
     "Crop": {
       "cropname":"string",
-      "imageuri":"string",
+      "cropimg":"string",
       "weight":"string"
     },
      "Client": {
