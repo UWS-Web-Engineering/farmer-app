@@ -19,9 +19,9 @@ class ClientController extends Controller
         //     'farmerid' => '2',
         // ]); 
 
-        $response = Http::withHeaders([
-            'Authorization' => $_COOKIE['token']
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/clients?limit=10');
+        $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/clients?limit=10';
+
+        $response = http::get($url);
 
         $clients = json_decode($response, true);
         $title = 'Clients';
@@ -35,7 +35,7 @@ class ClientController extends Controller
 
         $token = 'Bearer '.$_COOKIE['token'];
         $farmerid = $_COOKIE['farmerId'];
-        $officerid = 2;
+        // $officerid = 2;
 
         // Client Info
         // $response = Http::withHeaders([
@@ -47,9 +47,7 @@ class ClientController extends Controller
         
         $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/clients/'.$officerid;
 
-        $response = Http::withHeaders([
-            'Authorization' => $_COOKIE['token']
-        ])->get($url);
+        $response = http::get($url);
 
         $client = json_decode($response, true);
         $title = 'Client';
@@ -62,12 +60,9 @@ class ClientController extends Controller
         //     'farmerid' => $farmerid,
         // ]);
 
-        $response_q = Http::withHeaders([
-            'Authorization' => $token
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/queries?limit=10', [
-            'officerid' => $officerid,
-            'farmerid' => $farmerid
-        ]);
+        $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/queries?limit=10';
+
+        $response = http::get($url);
         
         // var_dump($clients);
         

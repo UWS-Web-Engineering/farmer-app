@@ -9,9 +9,12 @@ use Cookies;
 class RequestController extends Controller
 {
     function getRequests(){
-        $response = Http::withHeaders([
-            'Authorization' => $_COOKIE['token']
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/requests?limit=10');
+        // $response = Http::withHeaders([
+        //     'Authorization' => $_COOKIE['token']
+        // ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/requests?limit=10');
+
+        $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/requests?limit=10';
+        $response = http::get($url);
       
         $requests = json_decode($response, true);
         $title = 'Requests';

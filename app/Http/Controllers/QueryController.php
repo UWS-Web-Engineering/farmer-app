@@ -40,13 +40,7 @@ class QueryController extends Controller
         // ]);
 
         $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/queries/'.$id;
-
-        $response = Http::withHeaders([
-            'Authorization' => $token
-        ])->get($url, [
-            'officerid' => '2',
-            'farmerid' => '3',
-        ]);
+        $response = http::get($url);
 
         $query = json_decode($response, true);
         // $title = $query['clientname'];

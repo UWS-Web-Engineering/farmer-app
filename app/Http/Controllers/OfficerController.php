@@ -19,9 +19,8 @@ class OfficerController extends Controller
         //     'farmerid' => $farmerId,
         // ]);
 
-        $response = Http::withHeaders([
-            'Authorization' => $_COOKIE['token']
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/clients?limit=10');
+        $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/clients?limit=10';
+        $response = http::get($url);
 
         $officers = json_decode($response, true);
         // $rawTitle = json_encode($officers[0]['companyname']);

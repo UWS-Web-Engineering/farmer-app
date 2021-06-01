@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 class NegotiationController extends Controller
 {
     function getNegotiations(){
-        $response = Http::withHeaders([
-            'Authorization' => $_COOKIE['token']
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/negotiations?limit=10');
+        // $response = Http::withHeaders([
+        //     'Authorization' => $_COOKIE['token']
+        // ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/negotiations?limit=10');
+
+        $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/negotiations?limit=10';
+        $response = http::get($url);
       
         $requests = json_decode($response, true);
         // $title = $request['clientName'];
