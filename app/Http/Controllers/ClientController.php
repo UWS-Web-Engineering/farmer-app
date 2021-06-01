@@ -8,9 +8,10 @@ use Cookies;
 
 class ClientController extends Controller
 {
-    function getClients(){
+    function getClients($crop_id){
         
         $id = 'Bearer '.$_COOKIE['token'];
+        $farmerId = $_COOKIE['farmerId'];
         
         // $response = Http::withHeaders([
         //     'Authorization' => $id 
