@@ -7,16 +7,16 @@
 @section('content')
 <div class="b-clients-container">
     <div class="b-back">
-        <a href="/clients">
+        <a href="/officers/{{ $client['id'] }} ">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M231.536 475.535l7.071-7.07c4.686-4.686 4.686-12.284 0-16.971L60.113 273H436c6.627 0 12-5.373 12-12v-10c0-6.627-5.373-12-12-12H60.113L238.607 60.506c4.686-4.686 4.686-12.284 0-16.971l-7.071-7.07c-4.686-4.686-12.284-4.686-16.97 0L3.515 247.515c-4.686 4.686-4.686 12.284 0 16.971l211.051 211.05c4.686 4.686 12.284 4.686 16.97-.001z"/></svg>
             <span class="b-heading b-heading-text">
                 BACK
             </span>
         </a>
     </div>
-    <a href="/query/{{ $client['id'] }}">
+    <a href="/query/{{ $officerid }}">
     </a>
-        
+        {{-- @foreach($clients as $clients => $client) --}}
         <!-- Hello -->
         <div class="b-cropname">
             {{ $client['cropname'] }}
@@ -28,13 +28,11 @@
                         Fulfill By
                     </div>
                     <div class="b-detail b-body">
-                    https://gateway.include.ninja/api/officer-manager/get_all_dets
-                        $client['expecteddate']
-                        <!-- @php 
-                            $timestamp = preg_replace( '/[^0-9]/', '', $client['dateAgreed']);
-                            $date = date("d M Y", $timestamp / 1000);
-                            echo $date;
-                        @endphp -->
+                        @php 
+                        $timestamp = preg_replace( '/[^0-9]/', '', $client['expecteddate']);
+                        $date = date("d M Y", $timestamp / 1000);
+                        echo $date;
+                        @endphp
                     </div>
                 </div>
                 
@@ -53,7 +51,7 @@
                         Contract Price
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['cropprice'] }}
+                        $ {{ $client['cropprice'] }}
                     </div>
                 </div>
                 
@@ -62,20 +60,21 @@
                         Down Payment
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['cropqty'] }}
+                        $ 0
                     </div>
                 </div>
             </div>
         </div>
+        {{-- @endforeach --}}   
 </div>
 
 <div class="b-queries-container">
     @foreach($queries as $queries => $query)
-        @if($query['isRead']!=0)
+        @if($query['isread']!=0)
         <a href="/query/{{ $query['id'] }}">
             <div class="b-section">
                 <h2 class="b-body b-body-text b-read">
-                    {{ $query['officerMessage'] }}
+                    {{ $query['officermessage'] }}
                 </h2>
             </div>
         </a>
@@ -83,7 +82,7 @@
         <a href="/query/{{ $query['id'] }}">
             <div class="b-section">
                 <h2 class="b-body b-body-text">
-                    {{ $query['officerMessage'] }}
+                    {{ $query['officermessage'] }}
                 </h2>
             </div>
         </a>

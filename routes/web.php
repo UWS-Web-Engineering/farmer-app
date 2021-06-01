@@ -8,6 +8,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OfficerController;
+use App\Http\Controllers\NegotiationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,16 +41,20 @@ Route::get('/settings', [UserController::class, 'renderSettings']);
 
 Route::get('/queries', [QueryController::class,'getQueries']);
 
-Route::get('/clients/{crop_id}', [ClientController::class,'getClients']);
+Route::get('/clients/{client_id}', [ClientController::class,'getClients']);
 
-Route::get('/officers/{client_id}', [OfficerController::class,'getOfficers']);
+Route::get('/officers/{officer_id}', [OfficerController::class,'getOfficers']);
 
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
 
-Route::get('/client/{officer_id}', [ClientController::class,'getClient']);
+Route::get('/client/{client_id}', [ClientController::class,'getClient']);
 
 Route::get('/crops', [CropController::class,'getCrops']);
 
 Route::get('/requests', [RequestController::class,'getRequests']);
 
-Route::get('/request/{request_id}', [QueryController::class,'getRequest']);
+Route::get('/request/{request_id}', [RequestController::class,'getRequest']);
+
+Route::get('/negotiations', [NegotiationController::class,'getNegotiations']);
+
+Route::get('/negotiation/{negotiation_id}', [NegotiationController::class,'getNegotiation']);

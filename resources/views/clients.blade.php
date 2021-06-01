@@ -12,7 +12,7 @@
              <div class="a">
              {{ $client['companyname'] }} </div>
              <div class="b">
-             {{ $client['cropqty'] }}kg 
+             {{ $client['weight'] }}kg 
             </div>
             </div>
         </a>
