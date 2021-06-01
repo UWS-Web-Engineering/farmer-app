@@ -47,6 +47,9 @@ $(document).ready(function() {
                     "Content-Type": "application/json"
                 },
                 dataType: 'json',
+                xhrFields: {
+                    withCredentials: true
+                },
                 success: function(data){
                     $('.b-msg-right').append(answer);
                 },
