@@ -43,6 +43,7 @@
 					const response = await axios.post('https://usercontroller.include.ninja/api/login', farmer);
 					// Set auth cookies
 					Cookies.set('token', response.data.token);
+					Cookies.set('farmerId', 3);
 					// Redirect to /crops
 					getFarmerId(response.data.user.id);
 				} catch(e) {

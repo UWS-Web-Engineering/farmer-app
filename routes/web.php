@@ -7,6 +7,7 @@ use App\Http\Controllers\CropController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OfficerController;
 
 /*
 |--------------------------------------------------------------------------
