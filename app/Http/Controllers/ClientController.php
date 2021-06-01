@@ -8,15 +8,16 @@ use Cookies;
 
 class ClientController extends Controller
 {
-    function getClients(){
+    function getClients($crop_id){
         
         $id = 'Bearer '.$_COOKIE['token'];
+        $farmerId = $_COOKIE['farmerId'];
         
         $response = Http::withHeaders([
             'Authorization' => $id 
         ])->get('https://gateway.include.ninja/api/officer-manager/get_managers_for_farmers', [
-            'cropid' => '4',
-            'farmerid' => '2',
+            'cropid' => $crop_id,
+            'farmerid' => $farmerId,
         ]); 
 
         $clients = json_decode($response, true);
@@ -38,7 +39,7 @@ class ClientController extends Controller
         ]); 
 
         $client = json_decode($response, true);
-        $title = $client['name'];
+        $title = "Client";
 
         // Queries
         $response_q = Http::withHeaders([

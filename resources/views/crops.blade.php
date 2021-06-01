@@ -26,7 +26,7 @@
     @foreach($crops as $crops => $crop)
     <div class="p-column">
         <li class="pdf">
-		<a href="/clients">
+		<a href="/clients/{{ $crop['id'] }}">   
 			<img src={{ $crop['cropimg'] }}>      
              <div class="crop-details"> 
              {{ $crop['cropname'] }} 
