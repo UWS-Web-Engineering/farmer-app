@@ -10,10 +10,7 @@
         <a href="/client/{{ $officer['id'] }}">   
              <div class="client-container"> 
              <div class="a">
-             {{ $officer['companyname'] }} </div>
-             <div class="b">
-             {{ $officer['cropqty'] }}kg 
-            </div>
+             {{ $officer['officername'] }} </div>
             </div>
         </a>
         </li>
