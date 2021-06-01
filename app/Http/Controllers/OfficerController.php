@@ -10,10 +10,10 @@ class OfficerController extends Controller
 {
     function getOfficers(){
 
-        $id = $_COOKIE['farmerID'];
+        $id = 'Bearer '.$_COOKIE['token'];
 
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' + $_COOKIE['token']
+            'Authorization' =>  $id 
         ])->get('https://gateway.include.ninja/api/officer-manager/get_officers_under_manager', [
             'managerid' => '4',
             'farmerid' =>  '2',
