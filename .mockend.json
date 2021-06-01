@@ -15,7 +15,7 @@
     },
      "Client": {
       "clientid":"number",
-      "name":"string",
+      "companyname":"string",
       "weight":"string",
       "dateagreed":"date",
       "contractprice":"string",
