@@ -55,10 +55,10 @@
                     // Send POST request to backend
                     const response = await axios.post('https://usercontroller.include.ninja/api/signup', farmer);
                     // Set auth cookies
-                    Cookies.set('farmerID', response.data.user.id);
+                    Cookies.set('farmerId', 3);
                     Cookies.set('token', response.data.token);
 					// Redirect to /details and pass farmerID
-                    window.location.replace('details/'+document.getElementsByClassName('a-text-field a-mb username-field')[0].value);
+                    window.location.replace('details/'+response.data.user.id);
                 } catch(e) {
                     alert(e.message);
                 } finally {

@@ -23,8 +23,8 @@ class UserController extends Controller
         return view('users/register');
     }
 
-    function renderDetails($username){
-        return view('users/details', compact('username'));
+    function renderDetails($userid){
+        return view('users/details', compact('userid'));
     }
 
     function renderSettings(){
