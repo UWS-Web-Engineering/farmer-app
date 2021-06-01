@@ -18,12 +18,12 @@
       "companyname":"string",
       "weight":"string",
       "dateagreed":"date",
-      "contractprice":"string",
-      "downpayment":"string",
+      "contractprice":"int",
+      "downpayment":"int",
       "officername":"string",
       "cropname":"string",
       "expecteddate":"date",
-      "croptqty":"int"
+      "cropqty":"int"
     },
     "Request": {
       "id":"number",
