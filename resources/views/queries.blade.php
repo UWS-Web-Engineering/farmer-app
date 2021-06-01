@@ -7,7 +7,7 @@
 @section('content')
 <div class="b-queries-container">
     @foreach($queries as $queries => $query)
-        @if($query['isread']!=1)
+        @if($query['isread']=='false')
             <a href="/query/{{ $query['id'] }}">
                 <div class="b-section">
                     <div class="b-heading b-heading-text">

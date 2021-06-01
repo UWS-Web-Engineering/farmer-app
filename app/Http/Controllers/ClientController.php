@@ -9,7 +9,6 @@ use Cookies;
 class ClientController extends Controller
 {
     function getClients($crop_id){
-        
         $id = 'Bearer '.$_COOKIE['token'];
         $farmerId = $_COOKIE['farmerId'];
         
@@ -27,6 +26,8 @@ class ClientController extends Controller
         $clients = json_decode($response, true);
         $title = 'Clients';
 
+        // var_dump($clients);
+
         return view('clients', compact('clients', 'title'));
     }
 
@@ -43,10 +44,12 @@ class ClientController extends Controller
         //     'officerid' => $officerid,
         //     'farmerid' => $farmerid
         // ]);
+        
+        $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/clients/'.$officerid;
 
         $response = Http::withHeaders([
             'Authorization' => $_COOKIE['token']
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/clients/1');
+        ])->get($url);
 
         $client = json_decode($response, true);
         $title = 'Client';

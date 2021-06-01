@@ -29,7 +29,7 @@ class QueryController extends Controller
     }
 
     function getQuery($id){
-        $id = 'Bearer '.$_COOKIE['token'];
+        $token = 'Bearer '.$_COOKIE['token'];
 
         // Queries
         // $response = Http::withHeaders([
@@ -39,9 +39,11 @@ class QueryController extends Controller
         //     'farmerid' => '3',
         // ]);
 
+        $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/queries/'.$id;
+
         $response = Http::withHeaders([
-            'Authorization' => $id 
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/queries/2', [
+            'Authorization' => $token
+        ])->get($url, [
             'officerid' => '2',
             'farmerid' => '3',
         ]);
