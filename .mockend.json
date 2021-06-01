@@ -20,7 +20,8 @@
       "dateagreed":"date",
       "contractprice":"string",
       "downpayment":"string",
-      "officername":"string"
+      "officername":"string",
+      "cropname":"string"
     },
     "Request": {
       "id":"number",
