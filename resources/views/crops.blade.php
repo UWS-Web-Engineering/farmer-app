@@ -27,7 +27,8 @@
     <div class="p-column">
         <li class="pdf">
 		<a href="/clients">
-			<img src={{ $crop['cropimg'] }}>      
+			{{-- <img src={{ $crop['cropimg'] }}> --}}
+			<img src="http://bettybondoc.com/we/wheat.jpg  "> 
              <div class="crop-details"> 
              {{ $crop['cropname'] }} 
             </div>

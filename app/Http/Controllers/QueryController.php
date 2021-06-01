@@ -10,9 +10,15 @@ class QueryController extends Controller
         $id = 'Bearer '.$_COOKIE['token'];
 
         // Queries
+        // $response = Http::withHeaders([
+        //     'Authorization' => $id 
+        // ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries', [
+        //     'farmerid' => '3'
+        // ]);
+
         $response = Http::withHeaders([
             'Authorization' => $id 
-        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries', [
+        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/queries?limit=2', [
             'farmerid' => '3'
         ]);
 
@@ -26,9 +32,16 @@ class QueryController extends Controller
         $id = 'Bearer '.$_COOKIE['token'];
 
         // Queries
+        // $response = Http::withHeaders([
+        //     'Authorization' => $id 
+        // ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries_by_officer', [
+        //     'officerid' => '2',
+        //     'farmerid' => '3',
+        // ]);
+
         $response = Http::withHeaders([
             'Authorization' => $id 
-        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries_by_officer', [
+        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/queries/2', [
             'officerid' => '2',
             'farmerid' => '3',
         ]);

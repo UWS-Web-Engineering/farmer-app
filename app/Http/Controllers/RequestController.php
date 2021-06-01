@@ -24,7 +24,7 @@ class RequestController extends Controller
         $response = http::get($url);
 
         $request = json_decode($response, true);
-        $title = $request['clientName'];
+        $title = 'Request';
 
         return view('request', compact('request', 'title'));
     }

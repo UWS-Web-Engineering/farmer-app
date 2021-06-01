@@ -16,7 +16,7 @@
     </div>
     <a href="/query/{{ $officerid }}">
     </a>
-        
+        {{-- @foreach($clients as $clients => $client) --}}
         <!-- Hello -->
         <div class="b-cropname">
             {{ $client['cropname'] }}
@@ -28,13 +28,11 @@
                         Fulfill By
                     </div>
                     <div class="b-detail b-body">
-                        <!-- https://gateway.include.ninja/api/officer-manager/get_all_dets -->
-                        $client['expecteddate']
-                        <!-- @php 
-                            $timestamp = preg_replace( '/[^0-9]/', '', $client['dateAgreed']);
-                            $date = date("d M Y", $timestamp / 1000);
-                            echo $date;
-                        @endphp -->
+                        @php 
+                        $timestamp = preg_replace( '/[^0-9]/', '', $client['expecteddate']);
+                        $date = date("d M Y", $timestamp / 1000);
+                        echo $date;
+                        @endphp
                     </div>
                 </div>
                 
@@ -53,7 +51,7 @@
                         Contract Price
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['cropprice'] }}
+                        $ {{ $client['cropprice'] }}
                     </div>
                 </div>
                 
@@ -62,16 +60,17 @@
                         Down Payment
                     </div>
                     <div class="b-detail b-body">
-                        {{ $client['cropqty'] }}
+                        $ 0
                     </div>
                 </div>
             </div>
         </div>
+        {{-- @endforeach --}}   
 </div>
 
 <div class="b-queries-container">
     @foreach($queries as $queries => $query)
-        @if($query['isRead']!=0)
+        @if($query['isread']!=0)
         <a href="/query/{{ $query['id'] }}">
             <div class="b-section">
                 <h2 class="b-body b-body-text b-read">

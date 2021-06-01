@@ -12,9 +12,13 @@ class CropController extends Controller
 
         $id = 'Bearer '.$_COOKIE['token'];
 
+        // $response = Http::withHeaders([
+        //     'Authorization' => $id 
+        // ])->get('https://gateway.include.ninja/api/officer-manager/get_all_crops_farmers/3');
+
         $response = Http::withHeaders([
-            'Authorization' => $id 
-        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_crops_farmers/3');
+            'Authorization' => $_COOKIE['token']
+        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/crops?limit=10');
 
         $crops = json_decode($response, true);
         $title = 'Crops';
