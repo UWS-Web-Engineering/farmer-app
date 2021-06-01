@@ -40,13 +40,13 @@ Route::get('/settings', [UserController::class, 'renderSettings']);
 
 Route::get('/queries', [QueryController::class,'getQueries']);
 
-Route::get('/clients', [ClientController::class,'getClients']);
+Route::get('/clients/{crop_id}', [ClientController::class,'getClients']);
 
-Route::get('/officers', [OfficerController::class,'getOfficers']);
+Route::get('/officers/{client_id}', [OfficerController::class,'getOfficers']);
 
 Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
 
-Route::get('/client/{client_id}', [ClientController::class,'getClient']);
+Route::get('/client/{officer_id}', [ClientController::class,'getClient']);
 
 Route::get('/crops', [CropController::class,'getCrops']);
 

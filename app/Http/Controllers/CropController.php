@@ -14,7 +14,7 @@ class CropController extends Controller
 
         $response = Http::withHeaders([
             'Authorization' => $id 
-        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_crops_farmers/3');
+        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_crops_farmers/'.$_COOKIE['farmerId']);
 
         $crops = json_decode($response, true);
         $title = 'Crops';
