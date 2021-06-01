@@ -62,7 +62,7 @@ class ClientController extends Controller
 
         $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/queries?limit=10';
 
-        $response = http::get($url);
+        $response_q = http::get($url);
         
         // var_dump($clients);
         
