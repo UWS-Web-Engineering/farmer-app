@@ -12,16 +12,26 @@
 		66.9082 47.6707 69.3129 56.7328C94.4062 54.1277 
 		114 32.9309 114 7.125H99.75Z" fill="#65816B"
 		/> 
-	</svg>
-			<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
-			{{ csrf_field() }}
-			<input type="hidden" name="username" value={{ $username }} />
-			<input type="email" name="email" required placeholder="Email" class="a-text-field a-mb" />
-			<input type="text" name="name" required placeholder="Name" class="a-text-field a-mb" />
-			<input type="phone" name="phone" required placeholder="Phone Number" class="a-text-field a-mb" />
-			<input type="text" name="addr" required placeholder="Address" class="a-text-field a-mb" />
-			<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-align-self-end" />
-		</form>
+		</svg>
+				<h1 class="a-align-selft-center a-text-center a-text-light a-mb--xl">FARMER APP</h1>
+				{{ csrf_field() }}
+				<input type="hidden" name="usercontrollerid" value={{ $username }} />
+				<input type="email" name="farmeremail" required placeholder="Email" class="a-text-field a-mb" />
+				<input type="text" name="farmername" required placeholder="Name" class="a-text-field a-mb" />
+				<input type="phone" name="farmerphone" required placeholder="Phone Number" class="a-text-field a-mb" />
+				<input type="text" name="farmeraddress" required placeholder="Address" class="a-text-field a-mb" />
+				<label for="farmerregions" class="p-text-field">Where are you located?</label>
+				<select name="regionId" id="id">
+					<option value="nsw">NSW</option>
+					<option value="victoria">Victoria</option>
+					<option value="queensland">Queensland</option>
+					<option value="tasmania">Tasmania</option>
+					<option value="south australia">South Australia</option>
+					<option value="act">ACT</option>
+					<option value="north territory">North Territory</option>
+				</select>
+				<input type="submit" name="submitBtn" value="SUBMIT" class="a-btn a-ml-auto a-mt a-align-self-end" />
+			</form>
 		
 		<script>
 			// Define form variable
