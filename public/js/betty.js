@@ -3,9 +3,10 @@ $(document).ready(function() {
     $(document).on('click', '.b-query-response', function() {
         var response = $(this).data('response');
         var query_id = $(this).data('queryid');
-        var url = 'https://officermanager.include.ninja/api/sendmessage';
+        var url = 'https://gateway.include.ninja/api/officer-manager/sendmessage';
         var answer = '';
         var object = {id: query_id, farmermessage: response};
+        var token = 'Bearer ' + Cookies.get('token');
 
         // Hide ask buttons once ask help submit button is clicked
         $('.b-query-response').hide();
@@ -23,27 +24,12 @@ $(document).ready(function() {
 
         // Run ajax command if response is either yes or no
         if (response != "Ask") {
-            // $.ajax({
-            //     type:"PUT",
-            //     url: url,
-            //     headers: {'Authorization':Cookies.get('token')},
-            //     data: {
-            //         query: object
-            //     },
-            //     success: function(data){
-            //         $('.b-msg-right').append(answer);
-            //     },
-            //     error: function(data){
-            //         $('.b-msg-right').append(answer); // Delete this line once connected to backend
-            //         console.log('Error');
-            //     }
-            // })
             $.ajax({
                 url: url,
                 type: 'PUT',
                 data: JSON.stringify(object),
                 headers: {
-                    'x-auth-token': Cookies.get('token'),
+                    'Authorization': token,
                     "Content-Type": "application/json"
                 },
                 dataType: 'json',
@@ -52,7 +38,8 @@ $(document).ready(function() {
                 },
                 error: function(data){
                     $('.b-msg-right').append(answer); // Delete this line once connected to backend
-                    console.log('Error');
+                    console.log('This is just a dummy POST. It is not connected to the backend.');
+                    // alert('Your request cannot be processed right now.');
                 }
             })
         }
@@ -64,9 +51,10 @@ $(document).ready(function() {
     $(document).on('click', '.b-ask-response', function() {
         var response = $('textarea#askHelp').val();
         var query_id = $(this).data('queryid');
-        var url = 'https://officermanager.include.ninja/api/sendmessage';
+        var url = 'https://gateway.include.ninja/api/officer-manager/sendmessage';
         var object = {id: query_id, farmermessage: response};
         var answer = '<div><div class="b-bubble"><div class="b-message">'+response+'</div></div></div>';
+        var token = 'Bearer ' + Cookies.get('token');
         console.log(object);
 
         // Hide textbox upon clicking submit
@@ -78,7 +66,7 @@ $(document).ready(function() {
             type: 'PUT',
             data: JSON.stringify(object),
             headers: {
-                'x-auth-token': Cookies.get('token'),
+                'Authorization': token,
                 "Content-Type": "application/json"
             },
             dataType: 'json',
@@ -87,7 +75,8 @@ $(document).ready(function() {
             },
             error: function(data){
                 $('.b-msg-right').append(answer); // Delete this line once connected to backend
-                console.log('Error');
+                console.log('This is just a dummy POST. It is not connected to the backend.');
+                // alert('Your request cannot be processed right now.');
             }
         })
     })
@@ -98,10 +87,11 @@ $(document).ready(function() {
     $(document).on('click', '.b-req-response', function() {
         var response = $(this).data('response');
         var request_id = $(this).data('requestid');
-        var url = 'api/farmeroffer';
+        var url = 'https://gateway.include.ninja/api/officer-manager/farmeroffer';
         var farmerID = Cookies.get('farmerID');
         var object = {farmerID: farmerID, requestID: request_id, farmerResponse: response};
         var answer = '';
+        var token = 'Bearer ' + Cookies.get('token');
 
         // Hide ask buttons once ask help submit button is clicked
         $('.b-req-response').hide();
@@ -122,7 +112,10 @@ $(document).ready(function() {
             $.ajax({
                 type:"POST",
                 url: url,
-                headers: {'Authorization':Cookies.get('token')},
+                headers: {
+                    'Authorization': token,
+                    "Content-Type": "application/json"
+                },
                 data: {
                     query: object
                 },
@@ -131,7 +124,8 @@ $(document).ready(function() {
                 },
                 error: function(data){
                     $('.b-msg-right').append(answer); // Delete this line once connected to backend
-                    console.log('Error');
+                    console.log('This is just a dummy POST. It is not connected to the backend.');
+                    // alert('Your request cannot be processed right now.');
                 }
             })
         }
@@ -145,6 +139,7 @@ $(document).ready(function() {
         var price = $('textarea#price').val();
         var date = $('textarea#date').val();
         var farmerID = Cookies.get('farmerID');
+        var token = 'Bearer ' + Cookies.get('token');
         
         var request_id = $(this).data('requestid');
         var url = 'api/farmeroffer';
@@ -159,7 +154,10 @@ $(document).ready(function() {
         $.ajax({
             type:"POST",
             url: url,
-            headers: {'Authorization':Cookies.get('token')},
+            headers: {
+                'Authorization': token,
+                "Content-Type": "application/json"
+            },
             data: {
                 offer: object
             },
@@ -168,15 +166,12 @@ $(document).ready(function() {
             },
             error: function(data){
                 $('.b-msg-right').append(answer); // Delete this line once connected to backend
-                console.log('Error');
+                console.log('This is just a dummy POST. It is not connected to the backend.');
+                // alert('Your request cannot be processed right now.');
             }
         })
     })
 });
 
-// Get Clients
-// $(document).ready(function() {
-//     $(document).on('click', '.get-clients', function() {
-//         console.log('get clients')
-//     })
-// });
+// Create Negotiation POST similar to Request POST once API endpoint is ready. Right now, both Request and Negotiations
+// share the same AJAX call

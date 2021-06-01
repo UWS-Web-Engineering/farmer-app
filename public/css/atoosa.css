@@ -95,11 +95,13 @@ body {
 .a-btn {
     background: var(--a-primary-color);
     color: var(--a-white-color);
+    /* width: 50%; */
     border: none;
     border-radius: var(--a-radius);
     padding: var(--a-spacing) var(--a-spacing--large);
     text-transform: uppercase;
     text-decoration: none;
+    text-align: center;
 }
 /* Text Field */
 .a-text-field {

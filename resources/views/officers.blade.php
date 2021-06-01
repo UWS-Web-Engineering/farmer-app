@@ -5,15 +5,12 @@
 @endsection
 
 @section('content')
-    @foreach($clients as $clients => $client)
+    @foreach($officers as $officers => $officer)
         <li class="pdf">
-        <a href="/officers/{{ $client['id'] }}">    
+        <a href="/client/{{ $officer['id'] }}">     
              <div class="client-container"> 
              <div class="a">
-             {{ $client['companyname'] }} </div>
-             <div class="b">
-             {{ $client['weight'] }}kg 
-            </div>
+             {{ $officer['officername'] }} </div>
             </div>
         </a>
         </li>
