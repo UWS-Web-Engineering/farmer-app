@@ -11,7 +11,8 @@
     "Crop": {
       "cropname":"string",
       "cropimg":"string",
-      "cropqty":"string"
+      "cropqty":"string",
+      "id":"int"
     },
      "Client": {
       "clientid":"number",
