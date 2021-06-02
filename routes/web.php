@@ -1,10 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Response;
+use App\Http\Controllers\QueryController;
+use App\Http\Controllers\CropController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\RequestController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\OfficerController;
+use App\Http\Controllers\NegotiationController;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Web Routes // add your routes here
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -17,6 +25,36 @@ Route::get('/user', function () {
     return view('user');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+// Route::get('/requests', function () {
+//     return view('requests', ['title' => 'New Requests']);
+// });
+
+Route::view('/crops', 'crops/list');
+
+Route::get('/register', [UserController::class, 'renderRegister']);
+
+Route::get('/', [UserController::class, 'renderLogin']);
+
+Route::get('/details/{userid}', [UserController::class, 'renderDetails']);
+
+Route::get('/settings', [UserController::class, 'renderSettings']);
+
+Route::get('/queries', [QueryController::class,'getQueries']);
+
+Route::get('/clients/{client_id}', [ClientController::class,'getClients']);
+
+Route::get('/officers/{officer_id}', [OfficerController::class,'getOfficers']);
+
+Route::get('/query/{query_id}', [QueryController::class,'getQuery']);
+
+Route::get('/client/{client_id}', [ClientController::class,'getClient']);
+
+Route::get('/crops', [CropController::class,'getCrops']);
+
+Route::get('/requests', [RequestController::class,'getRequests']);
+
+Route::get('/request/{request_id}', [RequestController::class,'getRequest']);
+
+Route::get('/negotiations', [NegotiationController::class,'getNegotiations']);
+
+Route::get('/negotiation/{negotiation_id}', [NegotiationController::class,'getNegotiation']);

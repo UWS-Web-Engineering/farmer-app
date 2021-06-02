@@ -1,0 +1,9 @@
+{
+    "Query": {
+      "id": "id",
+      "sender": "string",
+      "query": "string",
+      "isRead": "boolean",
+      "queryDate": "date"
+    }
+}

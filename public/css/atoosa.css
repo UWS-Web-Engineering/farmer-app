@@ -1,0 +1,159 @@
+:root {
+    --a-spacing: 12px;
+    --a-spacing--small: calc(var(--a-spacing) / 2);
+    --a-spacing--large: calc(var(--a-spacing) * 2);
+    --a-spacing--x-large: calc(var(--a-spacing) * 4);
+    --a-radius: 2px;
+    --a-primary-color: #65816B;
+    --a-white-color: #fff;
+    --a-black-color: #000;
+    --a-light-color: #efefef;
+    --a-dark-color: #494949;
+    --a-red-color: #e23737;
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    margin: 0;
+}
+
+/* Colors */
+.a-primary {
+    background: var(--a-primary-color) !important;
+}
+.a-primary--text {
+    color: var(--a-primary-color) !important;
+}
+.a-red {
+    background: var(--a-red-color) !important;
+}
+.a-red--text {
+    color: var(--a-red-color) !important;
+}
+/* Text */
+.a-text-bold {
+    font-weight: 700;
+}
+.a-text-light {
+    font-weight: 100;
+}
+.a-text-center {
+    text-align: center;
+}
+/* Flex */
+.a-flex {
+    display: flex;
+}
+.a-flex-row {
+    flex-direction: row;
+}
+.a-flex-column {
+    flex-direction: column;
+}
+.a-align-self-center {
+    align-self: center;
+}
+.a-align-self-end {
+    align-self: end;
+}
+.a-justify-content-center {
+    justify-content: center;
+}
+.a-justify-content-space-between {
+    justify-content: space-between;
+}
+/* Spacing */
+.a-mt {
+    margin-top: var(--a-spacing);
+}
+.a-mt--lg {
+    margin-top: var(--a-spacing--large);
+}
+.a-mt--xl {
+    margin-top: var(--a-spacing--x-large);
+}
+.a-mb {
+    margin-bottom: var(--a-spacing);
+}
+.a-mb--lg {
+    margin-bottom: var(--a-spacing--large);
+}
+.a-mb--xl {
+    margin-bottom: var(--a-spacing--x-large);
+}
+.a-ml-auto {
+    margin-left: auto;
+}
+/* Container */
+.a-container {
+    padding: var(--a-spacing--large) var(--a-spacing--x-large);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+/* Button */
+.a-btn {
+    background: var(--a-primary-color);
+    color: var(--a-white-color);
+    /* width: 50%; */
+    border: none;
+    border-radius: var(--a-radius);
+    padding: var(--a-spacing) var(--a-spacing--large);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+}
+/* Text Field */
+.a-text-field {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid var(--a-dark-color);
+    border-left: none;
+    border-radius: 0;
+    padding: calc(var(--a-spacing)/2) calc(var(--a-spacing--large)/2);
+}
+/* Link */
+.a-link {
+    color: var(--a-black-color);
+    text-decoration: none;
+}
+.a-link:hover {
+    text-decoration: underline;
+}
+/* list */
+.a-list {
+    padding: 0;
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.a-list > li {
+    list-style-type: none;
+}
+.a-list > li > a,
+.a-list > li > button {
+    padding: var(--a-spacing--large) var(--a-spacing--small);
+    display: block;
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    text-align: start;
+    font-weight: bold;
+}
+.a-list > li:hover {
+    background: rgba(0,0,0,.1);
+}
+/* Modal */
+.a-modal {
+    background: white;
+    border: none;
+    border-radius: 8px;
+    padding: var(--a-spacing--x-large);
+    box-shadow: 0 6px 36px rgba(0,0,0,.15);
+    max-width: 275px;
+    box-sizing: border-box;
+}
+.a-modal::backdrop {
+    backdrop-filter: blur(3px);
+}
