@@ -20,7 +20,7 @@
                 {{ $query['officermessage'] }}
             </div>
 
-            {{-- @if($query['farmermessage']==null) --}}
+            @if($query['farmermessage']==null)
                 <div class="b-query-response b-btn b-btn-y" data-response="Yes" data-queryid="{{$query['id']}}">
                     Yes
                 </div>
@@ -30,11 +30,11 @@
                 <div class="b-query-response b-btn b-btn-a" data-response="Ask" data-queryid="{{$query['id']}}">
                     Ask Help
                 </div>
-            {{-- @endif --}}
+             @endif
         </div>
         <div class="b-date">
         @php 
-            $timestamp = preg_replace( '/[^0-9]/', '', $query['createdat']);
+            $timestamp = preg_replace( '/[^0-9]/', '', $query['created_at']);
             $date = date("d M, h:i A", $timestamp / 1000);
             echo $date;
         @endphp
@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="b-msg-right">
-        @if($query['farmermessage']==null)
+        @if($query['farmermessage']!=null)
             <div>
                 <div class="b-bubble">
                     <div class="b-message">
@@ -57,7 +57,7 @@
             </div>
             <div class="b-date">
                 @php
-                    $timestamp = preg_replace( '/[^0-9]/', '', $query['updatedat']);
+                    $timestamp = preg_replace( '/[^0-9]/', '', $query['updated_at']);
                     $date = date("d M, h:i A", $timestamp / 1000);
                     echo $date;
                 @endphp
