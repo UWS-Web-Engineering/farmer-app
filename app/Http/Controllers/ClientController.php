@@ -15,8 +15,8 @@ class ClientController extends Controller
         // $response = Http::withHeaders([
         //     'Authorization' => $id 
         // ])->get('https://gateway.include.ninja/api/officer-manager/get_managers_for_farmers', [
-        //     'cropid' => '4',
-        //     'farmerid' => '2',
+        //     'cropid' => '2',
+        //     'farmerid' => '1',
         // ]); 
 
         $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/clients?limit=10';
