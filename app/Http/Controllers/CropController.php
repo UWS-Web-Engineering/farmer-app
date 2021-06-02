@@ -14,7 +14,7 @@ class CropController extends Controller
 
         $response = Http::withHeaders([
             'Authorization' => $id 
-        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_crops_farmers/1');
+        ])->get('https://officermanager.include.ninja/api/get_all_crops_farmers/1');
 
         // $response = http::get('https://mockend.com/UWS-Web-Engineering/farmer-app/crops?limit=10');
 
