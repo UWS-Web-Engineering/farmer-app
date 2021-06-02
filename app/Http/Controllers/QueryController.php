@@ -10,20 +10,20 @@ class QueryController extends Controller
         $id = 'Bearer '.$_COOKIE['token'];
 
         // Queries
+        $response = Http::withHeaders([
+            'Authorization' => $id 
+        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries/1');
+
         // $response = Http::withHeaders([
         //     'Authorization' => $id 
-        // ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries', [
+        // ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/queries?limit=2', [
         //     'farmerid' => '3'
         // ]);
 
-        $response = Http::withHeaders([
-            'Authorization' => $id 
-        ])->get('https://mockend.com/UWS-Web-Engineering/farmer-app/queries?limit=2', [
-            'farmerid' => '3'
-        ]);
-
         $queries = json_decode($response, true);
         $title = 'Queries';
+
+        // var_dump($queries);
 
         return view('queries', compact('queries', 'title'));
     }
@@ -32,17 +32,27 @@ class QueryController extends Controller
         $token = 'Bearer '.$_COOKIE['token'];
 
         // Queries
-        // $response = Http::withHeaders([
-        //     'Authorization' => $id 
-        // ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries_by_officer', [
-        //     'officerid' => '2',
-        //     'farmerid' => '3',
-        // ]);
+        $response = Http::withHeaders([
+            'Authorization' => $token 
+        ])->get('https://gateway.include.ninja/api/officer-manager/get_all_queries/1');
 
-        $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/queries/'.$id;
-        $response = http::get($url);
+        // foreach 
 
-        $query = json_decode($response, true);
+
+        // $url = 'https://mockend.com/UWS-Web-Engineering/farmer-app/queries/'.$id;
+        // $response = http::get($url);
+
+        $messages = json_decode($response, true);
+        // var_dump($queries);
+
+        foreach($messages as $message) {
+            if($message['id']==$id){
+                $query = $message;
+            }
+        }
+        
+        // var_dump($message);
+
         // $title = $query['clientname'];
         $title = 'Message';
 

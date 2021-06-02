@@ -4,6 +4,7 @@ $(document).ready(function() {
         var response = $(this).data('response');
         var query_id = $(this).data('queryid');
         var url = 'https://gateway.include.ninja/api/officer-manager/sendmessage';
+        // var url = '/api/officer-manager/sendmessage';
         var answer = '';
         var object = {id: query_id, farmermessage: response};
         var token = 'Bearer ' + Cookies.get('token');
@@ -52,6 +53,7 @@ $(document).ready(function() {
         var response = $('textarea#askHelp').val();
         var query_id = $(this).data('queryid');
         var url = 'https://gateway.include.ninja/api/officer-manager/sendmessage';
+        // var url = '/api/officer-manager/sendmessage';
         var object = {id: query_id, farmermessage: response};
         var answer = '<div><div class="b-bubble"><div class="b-message">'+response+'</div></div></div>';
         var token = 'Bearer ' + Cookies.get('token');
@@ -87,7 +89,8 @@ $(document).ready(function() {
     $(document).on('click', '.b-req-response', function() {
         var response = $(this).data('response');
         var request_id = $(this).data('requestid');
-        var url = 'https://gateway.include.ninja/api/officer-manager/farmeroffer';
+        // var url = 'https://gateway.include.ninja/api/officer-manager/farmeroffer';
+        var url = '/api/officer-manager/farmeroffer';
         var farmerID = Cookies.get('farmerID');
         var object = {farmerID: farmerID, requestID: request_id, farmerResponse: response};
         var answer = '';
